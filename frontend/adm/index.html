@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contribua+ | Área Admin</title>
+    <link rel="icon" type="image/png" href="../../docs/imgs/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="./index.js" defer></script>
+</head>
+
+<body>
+    <header>
+
+        <div class="logosec">
+            <div class="text-logo">CONTRIBUA+ | ÁREA ADMINISTRADOR</div>
+        </div>
+
+
+    </header>
+
+    <div class="main-container">
+        <div class="navcontainer">
+            <nav class="nav">
+                <div class="nav-upper-options">
+                    <div class="nav-option option1 selected-option" onclick="carregarPainel()">
+                        <img src="../../docs/imgs/icon-painel-white.png" class="nav-img painel-icon">
+                        <h3>Painel</h3>
+                    </div>
+
+                    <div class="nav-option option2" onclick="carregarCampanhas()">
+                        <img src="../../docs/imgs/icon-doacao.png" class="nav-img campanha-icon">
+                        <h3>Campanhas</h3>
+                    </div>
+
+                    <div class="nav-option option3" onclick="carregarOrganizador()">
+                        <img src="../../docs/imgs/icon-organizador.png" class="nav-img organizador-icon">
+                        <h3>Organizadores</h3>
+                    </div>
+
+                    <div class="nav-option logout">
+                        <img src="../../docs/imgs/icon-sair.png" class="nav-img">
+                        <h3>Sair</h3>
+                    </div>
+
+                    <img class="logo" src="../../docs/imgs/logo.png">
+                </div>
+            </nav>
+        </div>
+        <div class="main-painel pag">
+
+            <div class="box-container">
+
+                <div class="box box1">
+                    <div class="text">
+                        <h2 class="topic-heading" id="n-veic">0</h2>
+                        <h2 class="topic">Campanhas no Total</h2>
+                    </div>
+                </div>
+
+                <div class="box box3">
+                    <div class="text">
+                        <h2 class="topic-heading" id="veic-uso">0</h2>
+                        <h2 class="topic">Campanhas Disponíveis</h2>
+                    </div>
+                </div>
+
+                <div class="box box5">
+                    <div class="text">
+                        <h2 class="topic-heading" id="n-motoristas">0</h2>
+                        <h2 class="topic">Campanhas Finalizadas</h2>
+                    </div>
+                </div>
+
+                <div class="box box6">
+                    <div class="text">
+                        <h2 class="topic-heading" id="n-motoristas">0</h2>
+                        <h2 class="topic">Organizadores no Total</h2>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="report-container">
+                <div class="report-header">
+                    <h1 class="recent-campanhas">Campanhas Recentes</h1>
+                    <button class="view" onclick="carregarCampanhas()">Ver Completo</button>
+                </div>
+
+                <table class="ver-campanhas-recentes">
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>NOME</th>
+                            <th>CATEGORIA</th>
+                            <th>DATA INÍCIO</th>
+                            <th>DATA TÉRMINO</th>
+
+                        </tr>
+                        <tr class="informacoes-alocacao-painel modelo">
+                            <td id="id-alocacao-painel"></td>
+                            <td id="id-motorista-painel"></td>
+                            <td id="id-veiculo-painel"></td>
+                            <td id="data-saida-painel"></td>
+                            <td id="data-retorno-painel"></td>
+                        </tr>
+                    </thead>
+
+                    <tbody class="tbody-alocacoes-painel">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="main-campanhas modelo pag">
+            <div>
+                <input type="date" />
+                <span>até</span>
+                <input type="date" />
+
+                <button>Filtrar</button>
+                <span style="margin-left: 20px; margin-right: 20px;">ou</span>
+                <input placeholder="Digite o nome da campanha" style="width: 200px;" />
+                <button>Buscar</button>
+            </div>
+            <div>
+                <div class="card-campanha">
+                    <div class="img-campanha"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-organizadores modelo pag">
+            <div>
+                <input type="date" />
+                <span>até</span>
+                <input type="date" />
+
+                <button>Filtrar</button>
+                <span style="margin-left: 20px; margin-right: 20px;">ou</span>
+                <input placeholder="Digite o nome do(a) organizador(a)" style="width: 250px;" />
+                <button>Buscar</button>
+            </div>
+            <div>
+                <div class="card-organizador">
+                    <div class="img-organizador"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+</body>
+
+</html>

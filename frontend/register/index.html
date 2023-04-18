@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contribua+ | Cadastrar-se</title>
+    <link rel="icon" type="image/png" href="../../docs/imgs/logo.png">
+    <link rel="stylesheet" href="./style.css">
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <div class="forma-cadastro">
+            <img src="../../docs/imgs/logo.png">
+            <p>Como você deseja se cadastrar?</p>
+            <div>
+                <button id="btn-pessoa-fisica" onclick="toLoadPessoaFisica()">Pessoa Física</button>
+                <button id="btn-pessoa-juridica" onclick="toLoadPessoaJuridica()">Pessoa Jurídica</button>
+            </div>
+        </div>
+
+        <div class="pessoa-fisica hidden">
+            <div class="div-voltar">
+                <button onclick="backForma()">&#60 Voltar</button>
+            </div>
+            <div class="area-register">
+                <img src="../../docs/imgs/logo.png">
+                <h1>Contribua+</h1>
+                <form>
+                    <div>
+                        <div>
+                            <label>Digite seu nome</label>
+                            <input placeholder="Digite seu nome" />
+                        </div>
+                        <div>
+                            <label>CPF</label>
+                            <input placeholder="Digite seu CPF" />
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <label>E-mail</label>
+                            <input placeholder="Digite e-mail" />
+                        </div>
+                        <div>
+                            <label>Celular</label>
+                            <div class="celular">
+                                <input id="ddd-pessoa-fisica" placeholder="DDD" />
+                                <input id="numero-celular-pessoa-fisica" placeholder="Ex.: 999999999">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <label>Digite uma senha</label>
+                            <input type="password" placeholder="Digite uma senha" />
+                        </div>
+                        <div>
+                            <label>Confirme sua senha</label>
+                            <input type="password" placeholder="Digite uma senha" />
+                        </div>
+                    </div>
+                </form>
+                <button>Efetuar cadastro</button>
+                <p>Já possui cadastro?</p>
+                <a href="../login/index.html">faça login.</a>
+            </div>
+        </div>
+
+        <div class="pessoa-juridica hidden">
+            <div class="div-voltar">
+                <button onclick="backForma()">&#60 Voltar</button>
+            </div>
+            <div class="area-register">
+                <img src="../../docs/imgs/logo.png">
+                <h1>Contribua+</h1>
+                <form>
+                    <div>
+                        <div>
+                            <label>Nome da Instituição</label>
+                            <input placeholder="Digite o nome fantasia da Instituição" />
+                        </div>
+                        <div>
+                            <label>CNPJ</label>
+                            <input placeholder="Digite o CPNJ da Instituição" />
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <label>E-mail do responsável</label>
+                            <input placeholder="Digite o e-mail do responsável" />
+                        </div>
+                        <div>
+                            <label>Celular</label>
+                            <div class="celular">
+                                <input id="ddd-pessoa-juridica" placeholder="DDD" />
+                                <input id="numero-celular-pessoa-juridica" placeholder="Ex.: 999999999">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <label>Digite uma senha</label>
+                            <input type="password" placeholder="Digite uma senha" />
+                        </div>
+                        <div>
+                            <label>Confirme sua senha</label>
+                            <input type="password" placeholder="Digite uma senha" />
+                        </div>
+                    </div>
+                </form>
+                <button>Efetuar cadastro</button>
+                <p>Já possui cadastro?</p>
+                <a href="../login/index.html">faça login.</a>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
