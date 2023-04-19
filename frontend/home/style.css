@@ -96,7 +96,13 @@ h1 {
     border-right: 1px solid #ddd;
     border-left: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
+    cursor: pointer;
 }
+
+.card:hover {
+    transform: scale(1.05)
+}
+
 
 .card>.img-campanha {
     width: 100%;
