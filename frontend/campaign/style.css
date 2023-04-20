@@ -4,8 +4,9 @@
 }
 
 body {
-    background-color: rgb(250, 250, 250);
+    background-color: rgb(249, 249, 249);
     font-family: "Poppins", sans-serif;
+    color: rgb(54, 54, 54)
 }
 
 header {
@@ -20,6 +21,7 @@ header {
     /* background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, 0.24), transparent); */
     /* background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.24), transparent); */
     gap: 40px;
+    background-color: rgb(255, 255, 255);
 }
 
 header>span {
@@ -79,7 +81,15 @@ main {
 }
 
 h1 {
+    display: flex;
+    justify-content: center;
     margin-top: 30px;
+    font-size: 45px;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
 }
 
 .principal-info-campanha {
@@ -116,4 +126,26 @@ h1 {
     margin-top: 15px;
     font-size: 15px;
     color: rgb(94, 94, 94);
+}
+
+.breve-resumo {
+    margin-top: 30px;
+    font-size: 25px;
+}
+
+.descricao {
+    margin-top: 20px;
+    max-width: 1200px;
+    font-size: 20px;
+    color: rgba(30, 30, 30, 0.824)
+}
+
+.section-descricao {
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    height: 400px;
 }
