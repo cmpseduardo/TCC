@@ -42,6 +42,10 @@ header>button {
     border-radius: 5px;
 }
 
+header>button:hover {
+    background-color: rgb(0, 136, 204);
+}
+
 header>div>#buscar {
     border-radius: 10px 0px 0px 10px;
     border: 1px solid rgba(211, 211, 211, 0.824);
@@ -112,6 +116,20 @@ h2 {
     padding: 25px;
 }
 
+.organizador-foto-e-nome {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    margin-top: 30px;
+    gap: 10px;
+}
+
+.organizador-foto-e-nome>img {
+    height: 35px;
+    width: 35px;
+    border-radius: 50px;
+}
+
 #apoiar {
     background-color: #65bf1b;
     padding: 15px;
@@ -120,6 +138,55 @@ h2 {
     border: none;
     border-radius: 10px;
     margin-top: 15px;
+}
+
+#apoiar:hover {
+    background-color: #4e9613;
+    cursor: pointer
+}
+
+.btn-site {
+    margin-top: 15px;
+    height: 53px;
+    width: 155px;
+    border-radius: 10px;
+    color: rgb(74, 74, 74);
+    background-color: rgba(255, 255, 255, 0.785);
+    font-size: 15px;
+    border: 1px solid rgb(157, 157, 157);
+}
+
+.btn-site:hover {
+    background-color: rgb(157, 157, 157);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.redes-sociais {
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn-rede-social {
+    display: flex;
+    padding: 10px;
+    gap: 5px;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.57);
+    border: 1px solid rgba(0, 0, 0, 0.176);
+    color: rgba(94, 94, 94);
+    font-size: 13px;
+    border-radius: 10px;
+}
+
+.btn-rede-social:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.img-rede-social {
+    height: 25px;
 }
 
 .text-alert {
