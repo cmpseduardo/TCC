@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../global/style.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <img src="../../docs/imgs/logo.png" style="height: 75px;">
+        <span>Contribua+</span>
+        <button id="cadastrar" onclick="window.location.href = '../register/index.html'">Comece sua campanha</button>
+        <div style="display: flex; align-items: center;">
+            <input id="buscar" placeholder="Busque por um campanha específica" style="width: 290px" />
+            <button id="pesquisar"><img src="../../docs/imgs/lupa-white.png"></button>
+        </div>
+        <button id="fazer-login" onclick="window.location.href = '../login/index.html'">Fazer login</button>
+    </header>
+
+    <main>
+        <div style="display: flex; gap: 30px;">
+            <div class="info-perfil">
+                <img class="img-perfil"
+                    src="https://play-lh.googleusercontent.com/lO0-UT9yyZ55shpgJVKcBxYGd1MWwdsxoK1GjNcd9FkcYHX4yjjj5OqktP0O1rVoTwU" />
+                <div>
+                    <div style="display: flex; flex-direction: column;">
+                        <h1 class="nome-organizador-info">[Nome Organizador]</h1>
+                        <span style="color: grey">[Tipo de conta]</span>
+                    </div>
+                    <p style="margin-top: 30px;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla ex
+                        voluptas reiciendis aperiam
+                        nisi
+                        sapiente facere earum maiores maxime ut tempora explicabo, consequatur obcaecati velit quo
+                        accusamus
+                        qui praesentium delectus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel autem
+                        quasi
+                        odio possimus doloremque fugit nulla recusandae dolore repellat rerum eum, hic accusantium,
+                        tenetur
+                        ad voluptas totam minima ab saepe.</p>
+                    <div class="redes-sociais">
+                        <button class="btn-rede-social"><img class="img-rede-social"
+                                src="https://png.pngtree.com/png-vector/20221018/ourmid/pngtree-instagram-icon-png-image_6315974.png" />Instagram</button>
+                        <button class="btn-rede-social"><img class="img-rede-social"
+                                src="https://www.edigitalagency.com.au/wp-content/uploads/Facebook-logo-blue-circle-large-transparent-png.png" />Facebook</button>
+                        <button class="btn-rede-social"><img class="img-rede-social"
+                                src="https://upload.wikimedia.org/wikinews/pt/thumb/a/a3/Twitter_bird_logo.svg/2048px-Twitter_bird_logo.svg.png" />Twitter</button>
+                        <button class="btn-rede-social"><img class="img-rede-social"
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png">WhatsApp</button>
+                    </div>
+                </div>
+            </div>
+            <div class="comece-campanha">
+                <p>Total Arrecado</p>
+                <span style="font-size: 60px">R$6.000,000</span>
+            </div>
+        </div>
+
+
+        <h1 style="margin-top: 50px;">Campanhas desse organizador</h1>
+        <div class="cards">
+            <div class="card">
+                <img class="img-campanha"
+                    src="https://blog-leiturinha-novo.s3.us-east-1.amazonaws.com/production/uploads/2022/01/iStock-1166576788-1.jpg" />
+                <div class="texts">
+                    <p class="nome-campanha">Criança Alegre - Ajude Crianças</p>
+                    <p class="nome-organizador">por Fulano</p>
+                    <p class="descricao-campanha">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Dignissimos
+                        incidunt unde molestias, accusamus perspiciatis illo! Nostrum nemo enim quae, accusamus
+                        eum
+                        cumque excepturi laborum deserunt eius. Deleniti minus commodi tempora.
+                    </p>
+                </div>
+                <div class="infos">
+                    <div>
+                        <img src="../../docs/imgs/local-icon.png" />
+                        <span>São Paulo</span>
+                    </div>
+                    <div>
+                        <img src="../../docs/imgs/etiqueta-icon.png" />
+                        <span>Social</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
