@@ -5,34 +5,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../../docs/imgs/logo.png">
     <link rel="stylesheet" href="./../global/style.css">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Perfil [Organizador]</title>
 </head>
 
 <body>
     <header>
-        <img src="../../docs/imgs/logo.png" style="height: 75px;">
+        <img src="../../docs/imgs/logo.png" class="img-header">
         <span>Contribua+</span>
         <button id="cadastrar" onclick="window.location.href = '../register/index.html'">Comece sua campanha</button>
-        <div style="display: flex; align-items: center;">
-            <input id="buscar" placeholder="Busque por um campanha específica" style="width: 290px" />
+        <div class="div-header">
+            <input id="buscar" placeholder="Busque por um campanha específica" />
             <button id="pesquisar"><img src="../../docs/imgs/lupa-white.png"></button>
         </div>
         <button id="fazer-login" onclick="window.location.href = '../login/index.html'">Fazer login</button>
     </header>
 
     <main>
-        <div style="display: flex; gap: 30px;">
+        <div class="perfil">
             <div class="info-perfil">
+                <!-- <div class="img-fundo">
+                </div> -->
                 <img class="img-perfil"
                     src="https://play-lh.googleusercontent.com/lO0-UT9yyZ55shpgJVKcBxYGd1MWwdsxoK1GjNcd9FkcYHX4yjjj5OqktP0O1rVoTwU" />
                 <div>
-                    <div style="display: flex; flex-direction: column;">
+                    <div class="info-conta">
                         <h1 class="nome-organizador-info">[Nome Organizador]</h1>
-                        <span style="color: grey">[Tipo de conta]</span>
+                        <span class="tipo-conta">[Tipo de conta]</span>
                     </div>
-                    <p style="margin-top: 30px;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla ex
+                    <p class="desc-perfil">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla ex
                         voluptas reiciendis aperiam
                         nisi
                         sapiente facere earum maiores maxime ut tempora explicabo, consequatur obcaecati velit quo
@@ -54,14 +57,34 @@
                     </div>
                 </div>
             </div>
-            <div class="comece-campanha">
-                <p>Total Arrecado</p>
-                <span style="font-size: 60px">R$6.000,000</span>
+
+            <div class="info-campanha">
+                <div class="total-arrecadado">
+                    <p style="font-weight: bold;">Total Arrecado</p>
+                    <span class="valor">R$6.000,000</span>
+                </div>
+
+                <div class="n-campanha">
+                    <div class="qtd-campanha">
+                        <span class="n-qtd-campanha">9</span>
+                        <span>campanhas</span>
+                    </div>
+                    <div class="ativas-e-encerradas">
+                        <div>
+                            <span style="font-size: 55px">5</span>
+                            <span>ativas</span>
+                        </div>
+                        <div>
+                            <span style=" font-size: 55px">4</span>
+                            <span>encerradas</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
 
-        <h1 style="margin-top: 50px;">Campanhas desse organizador</h1>
+        <h1>Campanhas desse organizador</h1>
         <div class="cards">
             <div class="card">
                 <img class="img-campanha"

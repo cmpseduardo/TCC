@@ -18,6 +18,10 @@ header {
     background-color: rgb(255, 255, 255);
 }
 
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 header>span {
     margin-left: -30px;
     margin-right: 50px;
@@ -70,4 +74,17 @@ header>#cadastrar {
 header>#fazer-login {
     margin-left: 600px;
     cursor: pointer
+}
+
+.img-header {
+    height: 75px;
+}
+
+.div-header {
+    display: flex;
+    align-items: center;
+}
+
+.div-header>#buscar {
+    width: 290px
 }

@@ -13,11 +13,11 @@
 
 <body>
     <header>
-        <img src="../../docs/imgs/logo.png" style="height: 75px;">
+        <img src="../../docs/imgs/logo.png" class="img-header">
         <span>Contribua+</span>
         <button id="cadastrar" onclick="window.location.href = '../register/index.html'">Comece sua campanha</button>
-        <div style="display: flex; align-items: center;">
-            <input id="buscar" placeholder="Busque por um campanha específica" style="width: 290px" />
+        <div class="div-header">
+            <input id="buscar" placeholder="Busque por um campanha específica" />
             <button id="pesquisar"><img src="../../docs/imgs/lupa-white.png"></button>
         </div>
         <button id="fazer-login" onclick="window.location.href = '../login/index.html'">Fazer login</button>
@@ -28,17 +28,17 @@
             <h1>[Título Campanha]</h1>
             <h2>[Organizador da Campanha]</h2>
             <div class="principal-info-campanha">
-                <img style="border-radius: 10px"
+                <img class="img-campanha"
                     src="https://blog-static.petlove.com.br/wp-content/uploads/2022/11/30161259/racao-para-cachorro-escolher-Petlove.jpg" />
                 <div>
                     <div class="valor-and-meta">
                         <div>
-                            <span style="font-size: 35px">Meta de </span>
-                            <span style="font-size: 50px; font-weight: bold">R$2.500,00</span>
+                            <span class="meta">Meta de </span>
+                            <span class="valor-meta">R$2.500,00</span>
                         </div>
                         <div>
-                            <span style="font-size: 30px;">Já arrecadou </span><span
-                                style="font-size: 30px; font-weight: bold;">R$1.000,00</span>
+                            <span class="ja-arrecadou">Já arrecadou </span><span
+                                class="valor-arrecadado">R$1.000,00</span>
                         </div>
                         <div class="organizador-foto-e-nome">
                             <img
@@ -46,7 +46,7 @@
                             <span>[Nome organizador]</span>
                         </div>
                     </div>
-                    <div style="display: flex; gap: 10px;">
+                    <div class="btns-apoie-site">
                         <button id="apoiar">Apoiar essa campanha</button>
                         <button class="btn-site">Visite o site</button>
                     </div>
