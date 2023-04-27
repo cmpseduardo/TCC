@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contribua+ | Área Organizador</title>
+    <link rel="icon" type="image/png" href="../../docs/imgs/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="./index.js" defer></script>
+</head>
+
+<body onload="carregarCampanhas()">
+    <header>
+
+        <div class="logosec">
+            <div class="text-logo">CONTRIBUA+ | ÁREA ORGANIZADOR</div>
+        </div>
+
+
+    </header>
+
+    <div class="main-container">
+        <div class="navcontainer">
+            <nav class="nav">
+                <div class="nav-upper-options">
+
+                    <div class="nav-option option1" onclick="carregarCampanhas()">
+                        <img src="../../docs/imgs/icon-doacao.png" class="nav-img campanha-icon">
+                        <h3>Campanhas</h3>
+                    </div>
+
+                    <div class="nav-option option2" onclick="carregarMeuPerfil()">
+                        <img src="../../docs/imgs/icon-organizador.png" class="nav-img perfil-icon">
+                        <h3>Meu Perfil</h3>
+                    </div>
+
+                    <div class="nav-option logout">
+                        <img src="../../docs/imgs/icon-sair.png" class="nav-img">
+                        <h3>Sair</h3>
+                    </div>
+
+                    <img class="logo" src="../../docs/imgs/logo.png">
+                </div>
+            </nav>
+        </div>
+
+        <div class="main-campanhas ocultar pag">
+            <div>
+                <div class="card-organizador">
+                    <div class="img-organizador"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-perfil pag">
+            <div class="imagem">
+                <img class="img-perfil"
+                    src="https://scontent-gru1-2.xx.fbcdn.net/v/t39.30808-6/244302866_4376858019028061_3471028509914648623_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=iy7Mg9SKj2kAX9JhJuP&_nc_oc=AQnhpqXLbIK_7sAqyolS8rWpZfF1BfpJCaLQFTxlNVfctXqKHJXzSkp_eDsvp7GPWS0&_nc_ht=scontent-gru1-2.xx&oh=00_AfAGJVQsm4_MsD7rTQiKNHWXE1IQLTgivEcV4CJYqpoNJQ&oe=644A9A04">
+                <input class="ocultar" id="input-file" type="file" />
+            </div>
+            <form>
+                <label>Nome:</label>
+                <input id="input-nome-organizador" type="text" value="Nome Organizador" disabled />
+                <label>CPF/CNPJ:</label>
+                <input id="input-cpf-cnpj" type="text" value="475.577.338-51" disabled />
+                <label>E-mail:</label>
+                <input id="input-email" type="text" value="camposeduardov@gmail.com" disabled />
+                <label>Celular:</label>
+                <input id="input-celular" type="text" value="(19) 99637-1475" disabled />
+                <label id="instagram-label">Instagram:</label>
+                <input id="input-instagram" type="text" value="Teste" disabled />
+                <label>WhatsApp</label>
+                <input id="input-whatsapp" type="text" value="(19) 99637-1475" disabled />
+                <label>Twitter</label>
+                <input id="input-twitter" type="text" value="Teste" disabled />
+                <label>Site</label>
+                <input id="input-site" type="text" value="www.meusite.com.br" disabled />
+                <button id="editar-perfil" type="button" onclick="editarPerfil()">Editar</button>
+                <button class="ocultar" id="salvar-edicao" type="button" onclick="salvarEdicao()">Salvar</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
