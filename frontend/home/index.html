@@ -19,10 +19,11 @@
         defer></script>
     <link rel="stylesheet" href="./../global/style.css">
     <link rel="stylesheet" href="style.css">
+    <script src="./index.js" defer></script>
     <title>Contribua+ | Apoie uma campanha</title>
 </head>
 
-<body>
+<body onload="carregar(), carregarNovas()">
     <header>
         <a href="../home/index.html"><img src="../../docs/imgs/logo.png" class="img-header"></a>
         <span>Contribua+</span>
@@ -56,7 +57,7 @@
         <section class="section-destaque">
             <h1>Campanhas em Destaque</h1>
             <div class=" cards">
-                <div class="card">
+                <div class="card modelo">
                     <img class="img-campanha"
                         src="https://blog-static.petlove.com.br/wp-content/uploads/2022/11/30161259/racao-para-cachorro-escolher-Petlove.jpg" />
                     <div class="texts">
@@ -83,8 +84,8 @@
         </section>
         <section>
             <h1>Novas Campanhas</h1>
-            <div class="cards">
-                <div class="card">
+            <div class="cards-new">
+                <div class="card card-new">
                     <img class="img-campanha"
                         src="https://blog-leiturinha-novo.s3.us-east-1.amazonaws.com/production/uploads/2022/01/iStock-1166576788-1.jpg" />
                     <div class="texts">
