@@ -21,7 +21,9 @@ h2 {
 }
 
 .img-campanha {
-    border-radius: 10px
+    border-radius: 10px;
+    max-width: 800px;
+    max-height: 400px;
 }
 
 .principal-info-campanha {
