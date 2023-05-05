@@ -47,47 +47,70 @@
         </div>
 
         <div class="main-campanhas ocultar pag">
-            <div>
+            <div class="card-completo">
                 <div class="card-organizador">
-                    <div class="img-organizador"></div>
+                    <div>
+                        <img src="../../docs/imgs/logo.png" class="img-organizador">
+                        <input value="Campanha taltal" disabled />
+                    </div>
+                    <label>Meta</label>
+                    <div>
+                        <label>R$</label>
+                        <input value="3000" type="number" disabled />
+                    </div>
+
+                    <label>Arrecadado</label>
+                    <div>
+                        <label>R$</label>
+                        <input value="1500" type="number" disabled />
+                    </div>
+                    <button>Atualizar valores</button>
+                    <button>Editar informações</button>
+                </div>
+
+                <div class="card-desc">
+                    <label>Descrição</label>
+                    <textarea class="descricao-textarea" name="text" rows="10" cols="120"
+                        disabled>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita nobis assumenda reprehenderit, sapiente asperiores laboriosam ducimus. Illo praesentium blanditiis enim suscipit quis totam culpa! Incidunt nulla odio impedit repudiandae fugiat. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis ab, fugit porro omnis eligendi excepturi voluptatibus voluptas provident libero odio repudiandae consequuntur saepe dolorem earum ratione accusamus facilis distinctio aut!</textarea>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="main-perfil pag">
-            <div class="imagem">
-                <img class="img-perfil"
-                    src="https://scontent-gru1-2.xx.fbcdn.net/v/t39.30808-6/244302866_4376858019028061_3471028509914648623_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=iy7Mg9SKj2kAX9JhJuP&_nc_oc=AQnhpqXLbIK_7sAqyolS8rWpZfF1BfpJCaLQFTxlNVfctXqKHJXzSkp_eDsvp7GPWS0&_nc_ht=scontent-gru1-2.xx&oh=00_AfAGJVQsm4_MsD7rTQiKNHWXE1IQLTgivEcV4CJYqpoNJQ&oe=644A9A04">
-                <input class="ocultar" id="input-file" type="file" />
-            </div>
-            <form>
-                <label>Nome:</label>
-                <input id="input-nome-organizador" type="text" value="Nome Organizador" disabled />
-
-                <label>CPF/CNPJ:</label>
-                <input id="input-cpf-cnpj" type="text" value="475.577.338-51" disabled />
-
-                <label>E-mail:</label>
-                <input id="input-email" type="text" value="camposeduardov@gmail.com" disabled />
-
-                <label>Celular:</label>
-                <input id="input-celular" type="text" value="(19) 99637-1475" disabled />
-
-                <label id="instagram-label">Instagram:</label>
-                <input id="input-instagram" type="text" value="Teste" disabled />
-
-                <label>WhatsApp</label>
-                <input id="input-whatsapp" type="text" value="(19) 99637-1475" disabled />
-
-                <label>Twitter</label>
-                <input id="input-twitter" type="text" value="Teste" disabled />
-
-                <label>Site</label>
-                <input id="input-site" type="text" value="www.meusite.com.br" disabled />
-                <button id="editar-perfil" type="button" onclick="editarPerfil()">Editar</button>
-                <button class="ocultar" id="salvar-edicao" type="button" onclick="salvarEdicao()">Salvar</button>
-            </form>
+    <div class="main-perfil pag">
+        <div class="imagem">
+            <img class="img-perfil"
+                src="https://scontent-gru1-2.xx.fbcdn.net/v/t39.30808-6/244302866_4376858019028061_3471028509914648623_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=iy7Mg9SKj2kAX9JhJuP&_nc_oc=AQnhpqXLbIK_7sAqyolS8rWpZfF1BfpJCaLQFTxlNVfctXqKHJXzSkp_eDsvp7GPWS0&_nc_ht=scontent-gru1-2.xx&oh=00_AfAGJVQsm4_MsD7rTQiKNHWXE1IQLTgivEcV4CJYqpoNJQ&oe=644A9A04">
+            <input class="ocultar" id="input-file" type="file" />
         </div>
+        <form>
+            <label>Nome:</label>
+            <input id="input-nome-organizador" type="text" value="Nome Organizador" disabled />
+
+            <label>CPF/CNPJ:</label>
+            <input id="input-cpf-cnpj" type="text" value="475.577.338-51" disabled />
+
+            <label>E-mail:</label>
+            <input id="input-email" type="text" value="camposeduardov@gmail.com" disabled />
+
+            <label>Celular:</label>
+            <input id="input-celular" type="text" value="(19) 99637-1475" disabled />
+
+            <label id="instagram-label">Instagram:</label>
+            <input id="input-instagram" type="text" value="Teste" disabled />
+
+            <label>WhatsApp</label>
+            <input id="input-whatsapp" type="text" value="(19) 99637-1475" disabled />
+
+            <label>Twitter</label>
+            <input id="input-twitter" type="text" value="Teste" disabled />
+
+            <label>Site</label>
+            <input id="input-site" type="text" value="www.meusite.com.br" disabled />
+            <button id="editar-perfil" type="button" onclick="editarPerfil()">Editar</button>
+            <button class="ocultar" id="salvar-edicao" type="button" onclick="salvarEdicao()">Salvar</button>
+        </form>
+    </div>
     </div>
 
 </body>

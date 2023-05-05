@@ -225,34 +225,77 @@ td {
     display: none;
 }
 
+.card-completo {
+    display: flex;
+}
+
 .card-campanha {
     background-color: var(--background-color3);
     height: 300px;
-    width: 500px;
+    width: 650px;
     border-radius: 10px;
     margin: 30px;
     gap: 30px;
 }
 
-.card-campanha>.img-campanha {
-    background-color: rgb(213, 213, 213);
-    height: 100px;
-    width: 100px;
-}
-
 .card-organizador {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     background-color: var(--background-color3);
     height: 350px;
     width: 350px;
     border-radius: 10px;
-    margin: 30px;
-    gap: 30px;
+    margin-left: 50px;
+    padding: 20px;
 }
 
-.card-organizador>.img-organizador {
+.card-organizador>div>.img-organizador {
     background-color: rgb(213, 213, 213);
     height: 100px;
     width: 100px;
+    border-radius: 50%;
+}
+
+.card-desc {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--background-color3);
+    height: 350px;
+    width: 1050px;
+    border-radius: 10px;
+    margin-left: 10px;
+    padding: 20px;
+    gap: 10px;
+}
+
+.card-desc>.descricao-textarea {
+    resize: none;
+    padding: 20px;
+    text-align: justify;
+}
+
+.card-organizador>div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-organizador>div>.img-organizador {
+    background-color: rgb(213, 213, 213);
+    height: 100px;
+    width: 100px;
+}
+
+.card-organizador>div>input {
+    height: 20px;
+    width: 160px;
+}
+
+.card-organizador>button {
+    width: 140px;
+    margin-top: 10px;
 }
 
 .main-perfil {

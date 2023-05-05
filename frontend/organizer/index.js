@@ -7,6 +7,36 @@ function carregarMeuPerfil() {
 
     document.querySelector(".option1").classList.remove("selected-option")
     document.querySelector(".option2").classList.add("selected-option")
+
+    // fetch("http://localhost:3300/campanha")
+    //     .then((response) => {
+    //         return response.json();
+    //     })
+    //     .then((data) => {
+    //         data.forEach(campanha => {
+
+    //             let novoItem = itemCardNew.cloneNode(true)
+
+    //             novoItem.classList.remove("modelo")
+
+    //             let img = novoItem.querySelector(".img-campanha")
+    //             let nomeCampanha = novoItem.querySelector(".nome-campanha")
+    //             let nomeOrganizador = novoItem.querySelector(".nome-organizador")
+    //             let descricao = novoItem.querySelector(".descricao-campanha")
+
+    //             img.src = `../../back/${campanha.imagens[0].caminho_imagem}`
+    //             nomeCampanha.innerHTML = campanha.titulo
+    //             nomeOrganizador.innerHTML = campanha.organizador.nome
+    //             descricao.innerHTML = campanha.descricao
+
+    //             document.querySelector(".cards-new").appendChild(novoItem);
+    //         })
+    //     })
+
+}
+
+function editarCampanha() {
+
 }
 
 function carregarCampanhas() {

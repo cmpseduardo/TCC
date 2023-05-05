@@ -15,6 +15,7 @@ function carregar() {
                     let img = document.querySelector(".img-campanha")
                     let meta = document.querySelector(".valor-meta")
                     let arrecadado = document.querySelector(".valor-arrecadado")
+                    let nomeOrganizadorCard = document.querySelector(".nome-organizador-card")
 
                     let resumo = document.querySelector(".breve-resumo")
                     let descricao = document.querySelector(".descricao")
@@ -24,6 +25,7 @@ function carregar() {
                     img.src = `../../back/${campanha.imagens[0].caminho_imagem}`
                     meta.innerHTML = `R$${campanha.valor_meta}`
                     arrecadado.innerHTML = `R$${campanha.valor_arrecadado}`
+                    nomeOrganizadorCard.innerHTML = campanha.organizador.nome
 
                     resumo.innerHTML = campanha.objetivo
                     descricao.innerHTML = campanha.descricao
