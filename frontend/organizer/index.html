@@ -26,7 +26,7 @@
             <nav class="nav">
                 <div class="nav-upper-options">
 
-                    <div class="nav-option option1" onclick="carregarCampanhas()">
+                    <div class="nav-option option1" onclick="window.location.reload()">
                         <img src="../../docs/imgs/icon-doacao.png" class="nav-img campanha-icon">
                         <h3>Campanhas</h3>
                     </div>
@@ -47,25 +47,27 @@
         </div>
 
         <div class="main-campanhas ocultar pag">
-            <div class="card-completo">
+            <div class="card-completo ocultar">
+                <span class="n-id ocultar"></span>
                 <div class="card-organizador">
                     <div>
                         <img src="../../docs/imgs/logo.png" class="img-organizador">
-                        <input value="Campanha taltal" disabled />
+                        <input id="nome-campanha" value="Campanha taltal" disabled />
                     </div>
                     <label>Meta</label>
                     <div>
                         <label>R$</label>
-                        <input value="3000" type="number" disabled />
+                        <input id="meta" value="3000" type="number" disabled />
                     </div>
 
                     <label>Arrecadado</label>
                     <div>
                         <label>R$</label>
-                        <input value="1500" type="number" disabled />
+                        <input id="arrecadado" value="1500" type="number" disabled />
                     </div>
-                    <button>Atualizar valores</button>
-                    <button>Editar informações</button>
+                    <button id="editar" onclick="editarCampanha(this.parentNode.parentNode)">Editar informações</button>
+                    <button id="salvar" class="ocultar"
+                        onclick="salvarCampanha(this.parentNode.parentNode)">Salvar</button>
                 </div>
 
                 <div class="card-desc">
@@ -75,42 +77,43 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="main-perfil pag">
-        <div class="imagem">
-            <img class="img-perfil"
-                src="https://scontent-gru1-2.xx.fbcdn.net/v/t39.30808-6/244302866_4376858019028061_3471028509914648623_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=iy7Mg9SKj2kAX9JhJuP&_nc_oc=AQnhpqXLbIK_7sAqyolS8rWpZfF1BfpJCaLQFTxlNVfctXqKHJXzSkp_eDsvp7GPWS0&_nc_ht=scontent-gru1-2.xx&oh=00_AfAGJVQsm4_MsD7rTQiKNHWXE1IQLTgivEcV4CJYqpoNJQ&oe=644A9A04">
-            <input class="ocultar" id="input-file" type="file" />
+        <div class="main-perfil pag">
+            <div class="perfil">
+                <div class="imagem">
+                    <img class="img-perfil"
+                        src="data:image/png;base64,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">
+                    <input class="ocultar" id="input-file" type="file" />
+                </div>
+                <form>
+                    <label>Nome:</label>
+                    <input id="input-nome-organizador" type="text" value="Nome Organizador" disabled />
+
+                    <label>CPF/CNPJ:</label>
+                    <input id="input-cpf-cnpj" type="text" value="475.577.338-51" disabled />
+
+                    <label>E-mail:</label>
+                    <input id="input-email" type="text" value="camposeduardov@gmail.com" disabled />
+
+                    <label>Celular:</label>
+                    <input id="input-celular" type="text" value="(19) 99637-1475" disabled />
+
+                    <label id="instagram-label">Instagram:</label>
+                    <input id="input-instagram" type="text" value="Teste" disabled />
+
+                    <label>WhatsApp</label>
+                    <input id="input-whatsapp" type="text" value="(19) 99637-1475" disabled />
+
+                    <label>Twitter</label>
+                    <input id="input-twitter" type="text" value="Teste" disabled />
+
+                    <label>Site</label>
+                    <input id="input-site" type="text" value="www.meusite.com.br" disabled />
+                    <button id="editar-perfil" type="button" onclick="editarPerfil()">Editar</button>
+                    <button class="ocultar" id="salvar-edicao" type="button" onclick="salvarEdicao()">Salvar</button>
+                </form>
+            </div>
         </div>
-        <form>
-            <label>Nome:</label>
-            <input id="input-nome-organizador" type="text" value="Nome Organizador" disabled />
-
-            <label>CPF/CNPJ:</label>
-            <input id="input-cpf-cnpj" type="text" value="475.577.338-51" disabled />
-
-            <label>E-mail:</label>
-            <input id="input-email" type="text" value="camposeduardov@gmail.com" disabled />
-
-            <label>Celular:</label>
-            <input id="input-celular" type="text" value="(19) 99637-1475" disabled />
-
-            <label id="instagram-label">Instagram:</label>
-            <input id="input-instagram" type="text" value="Teste" disabled />
-
-            <label>WhatsApp</label>
-            <input id="input-whatsapp" type="text" value="(19) 99637-1475" disabled />
-
-            <label>Twitter</label>
-            <input id="input-twitter" type="text" value="Teste" disabled />
-
-            <label>Site</label>
-            <input id="input-site" type="text" value="www.meusite.com.br" disabled />
-            <button id="editar-perfil" type="button" onclick="editarPerfil()">Editar</button>
-            <button class="ocultar" id="salvar-edicao" type="button" onclick="salvarEdicao()">Salvar</button>
-        </form>
-    </div>
     </div>
 
 </body>
