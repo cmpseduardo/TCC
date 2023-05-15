@@ -21,7 +21,7 @@ function carregar() {
 
                 idCampanha.setAttribute("id", campanha.id);
                 idCampanha.classList.add("hidden")
-                img.src = `../../back/${campanha.imagens[0].caminho_imagem}`
+                img.src = `../../../back/${campanha.imagens[0].caminho_imagem}`
                 nomeCampanha.innerHTML = campanha.titulo
                 nomeOrganizador.innerHTML = campanha.organizador.nome
                 descricao.innerHTML = campanha.descricao
@@ -48,7 +48,7 @@ function carregarNovas() {
                 let nomeOrganizador = novoItem.querySelector(".nome-organizador")
                 let descricao = novoItem.querySelector(".descricao-campanha")
 
-                img.src = `../../back/${campanha.imagens[0].caminho_imagem}`
+                img.src = `../../../back/${campanha.imagens[0].caminho_imagem}`
                 nomeCampanha.innerHTML = campanha.titulo
                 nomeOrganizador.innerHTML = campanha.organizador.nome
                 descricao.innerHTML = campanha.descricao
@@ -60,5 +60,5 @@ function carregarNovas() {
 
 function abrirCampanha(e) {
     idCampanha = e.querySelector(".id-campanha")
-    window.location.href = `http://127.0.0.1:5500/frontend/campaign/index.html?id=${idCampanha.id}`
+    window.location.href = `http://127.0.0.1:5500/frontend/pages/campaign/index.html?id=${idCampanha.id}`
 }

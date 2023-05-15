@@ -22,7 +22,7 @@ function carregar() {
 
                     nomeCampanha.innerHTML = campanha.titulo
                     nomeOrganizador.innerHTML = campanha.organizador.nome
-                    img.src = `../../back/${campanha.imagens[0].caminho_imagem}`
+                    img.src = `../../../back/${campanha.imagens[0].caminho_imagem}`
                     meta.innerHTML = `R$${campanha.valor_meta}`
                     arrecadado.innerHTML = `R$${campanha.valor_arrecadado}`
                     nomeOrganizadorCard.innerHTML = campanha.organizador.nome
