@@ -1,12 +1,14 @@
-function carregarMeuPerfil() {
-    document.querySelector(".perfil-icon").src = "../../docs/imgs/icon-organizador-white.png"
-    document.querySelector(".campanha-icon").src = "../../docs/imgs/icon-doacao.png"
-    document.querySelector(".main-campanhas").classList.add("ocultar")
+var mainCampanhas = document.querySelector('.main-campanhas');
+var mainPerfil = document.querySelector('.main-perfil');
+var minhasCampanhas = document.querySelector('#minhas-campanhas');
+var meuPerfil = document.querySelector('#meu-perfil');
 
-    document.querySelector(".main-perfil").classList.remove("ocultar")
-
-    document.querySelector(".option1").classList.remove("selected-option")
-    document.querySelector(".option2").classList.add("selected-option")
+function carregarCampanhas() {
+    minhasCampanhas.classList.add('selected-option');
+    meuPerfil.classList.remove('selected-option');
+    meuPerfil.classList.remove('selected-option');
+    mainPerfil.classList.add('occult');
+    mainCampanhas.classList.remove('occult');
 
     // fetch("http://localhost:3300/campanha")
     //     .then((response) => {
@@ -15,68 +17,62 @@ function carregarMeuPerfil() {
     //     .then((data) => {
     //         data.forEach(campanha => {
 
-    //             let novoItem = itemCardNew.cloneNode(true)
+    //             let novoItem = itemCard.cloneNode(true)
 
-    //             novoItem.classList.remove("modelo")
+    //             novoItem.classList.remove("ocultar")
+    //             document.querySelector(".descricao-textarea")
 
-    //             let img = novoItem.querySelector(".img-campanha")
-    //             let nomeCampanha = novoItem.querySelector(".nome-campanha")
-    //             let nomeOrganizador = novoItem.querySelector(".nome-organizador")
-    //             let descricao = novoItem.querySelector(".descricao-campanha")
+    //             let id = novoItem.querySelector(".n-id")
+    //             let img = novoItem.querySelector(".img-organizador")
+    //             let nomeCampanha = novoItem.querySelector("#nome-campanha")
+    //             let meta = novoItem.querySelector("#meta")
+    //             let arrecadado = novoItem.querySelector("#arrecadado")
+    //             let descricao = novoItem.querySelector(".descricao-textarea")
 
+    //             id.innerHTML = campanha.id
     //             img.src = `../../back/${campanha.imagens[0].caminho_imagem}`
-    //             nomeCampanha.innerHTML = campanha.titulo
-    //             nomeOrganizador.innerHTML = campanha.organizador.nome
+    //             nomeCampanha.value = campanha.titulo
+    //             meta.value = campanha.valor_meta
+    //             arrecadado.value = campanha.valor_arrecadado
     //             descricao.innerHTML = campanha.descricao
 
-    //             document.querySelector(".cards-new").appendChild(novoItem);
+    //             document.querySelector(".main-campanhas").appendChild(novoItem);
     //         })
     //     })
-
 }
 
-var itemCard = document.querySelector(".card-completo")
+// Obtém o elemento botão
+var btn = document.getElementById("myBtn");
 
-function carregarCampanhas() {
-    document.querySelector(".campanha-icon").src = "../../docs/imgs/icon-doacao-white.png"
-    document.querySelector(".perfil-icon").src = "../../docs/imgs/icon-organizador.png"
-    document.querySelector(".main-perfil").classList.add("ocultar")
+// Obtém o elemento modal
+var modal = document.getElementById("myModal");
 
-    document.querySelector(".main-campanhas").classList.remove("ocultar")
+// Obtém o elemento de fechar
+var span = document.getElementsByClassName("close")[0];
 
+// Quando o usuário clica no botão, abre o modal
+btn.onclick = function () {
+    modal.style.display = "block";
+}
 
-    document.querySelector(".option1").classList.add("selected-option")
-    document.querySelector(".option2").classList.remove("selected-option")
+// Quando o usuário clica no elemento de fechar, fecha o modal
+span.onclick = function () {
+    modal.style.display = "none";
+}
 
-    fetch("http://localhost:3300/campanha")
-        .then((response) => {
-            return response.json();
-        })
-        .then((data) => {
-            data.forEach(campanha => {
+// Quando o usuário clica fora do modal, fecha o modal
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 
-                let novoItem = itemCard.cloneNode(true)
-
-                novoItem.classList.remove("ocultar")
-                document.querySelector(".descricao-textarea")
-
-                let id = novoItem.querySelector(".n-id")
-                let img = novoItem.querySelector(".img-organizador")
-                let nomeCampanha = novoItem.querySelector("#nome-campanha")
-                let meta = novoItem.querySelector("#meta")
-                let arrecadado = novoItem.querySelector("#arrecadado")
-                let descricao = novoItem.querySelector(".descricao-textarea")
-
-                id.innerHTML = campanha.id
-                img.src = `../../back/${campanha.imagens[0].caminho_imagem}`
-                nomeCampanha.value = campanha.titulo
-                meta.value = campanha.valor_meta
-                arrecadado.value = campanha.valor_arrecadado
-                descricao.innerHTML = campanha.descricao
-
-                document.querySelector(".main-campanhas").appendChild(novoItem);
-            })
-        })
+function carregarPerfil() {
+    minhasCampanhas.classList.remove('selected-option');
+    meuPerfil.classList.add('selected-option');
+    meuPerfil.classList.add('selected-option');
+    mainPerfil.classList.remove('occult');
+    mainCampanhas.classList.add('occult');
 }
 
 function editarCampanha(e) {
@@ -119,6 +115,43 @@ function salvarCampanha(e) {
 
     document.querySelector("#salvar").classList.add("ocultar");
     document.querySelector("#editar").classList.remove("ocultar");
+}
+
+function carregarMeuPerfil() {
+    document.querySelector(".perfil-icon").src = "../../docs/imgs/icon-organizador-white.png"
+    document.querySelector(".campanha-icon").src = "../../docs/imgs/icon-doacao.png"
+    document.querySelector(".main-campanhas").classList.add("ocultar")
+
+    document.querySelector(".main-perfil").classList.remove("ocultar")
+
+    document.querySelector(".option1").classList.remove("selected-option")
+    document.querySelector(".option2").classList.add("selected-option")
+
+    // fetch("http://localhost:3300/campanha")
+    //     .then((response) => {
+    //         return response.json();
+    //     })
+    //     .then((data) => {
+    //         data.forEach(campanha => {
+
+    //             let novoItem = itemCardNew.cloneNode(true)
+
+    //             novoItem.classList.remove("modelo")
+
+    //             let img = novoItem.querySelector(".img-campanha")
+    //             let nomeCampanha = novoItem.querySelector(".nome-campanha")
+    //             let nomeOrganizador = novoItem.querySelector(".nome-organizador")
+    //             let descricao = novoItem.querySelector(".descricao-campanha")
+
+    //             img.src = `../../back/${campanha.imagens[0].caminho_imagem}`
+    //             nomeCampanha.innerHTML = campanha.titulo
+    //             nomeOrganizador.innerHTML = campanha.organizador.nome
+    //             descricao.innerHTML = campanha.descricao
+
+    //             document.querySelector(".cards-new").appendChild(novoItem);
+    //         })
+    //     })
+
 }
 
 function editarPerfil() {
@@ -164,10 +197,10 @@ function salvarEdicao() {
         // "id": 3,
         "nome": nomeOrganizador,
         // Se cpfCnpj = 11 {
-        "cpf": "581.579.687-85",
+        "cpf": cpfCnpj,
         // }
         // Se cpfCnpj = 14 {
-        "cnpj": "22706924000103",
+        "cnpj": cpfCnpj,
         // }
         "email": "bora6822@uorak.com",
         "telefone": "(14)1231-8117",

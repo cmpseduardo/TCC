@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contribua+ | Área Organizador</title>
+    <link rel="icon" type="image/png" href="../../../docs/imgs/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="./index.js" defer></script>
+</head>
+
+<body onload="carregarCampanhas(), abrirModal()">
+    <header>
+        <nav>
+            <a id="minhas-campanhas" href="#" onclick="carregarCampanhas()">Minhas Campanhas</a>
+            <a id="meu-perfil" href="#" onclick="carregarPerfil()">Meu Perfil</a>
+        </nav>
+    </header>
+
+    <main>
+        <button id="myBtn">Abrir modal</button>
+        <div class="main-campanhas pag">
+            <div class="all-cards">
+                <div class="card nova-campanha">
+                    <span>+</span>
+                </div>
+                <div class="card">
+                    <img class="img-campanha" src="../../../docs/imgs/logo.png" />
+                    <p>Nome campanha</p>
+                </div>
+            </div>
+            <div id="myModal" class="modal">
+                <!-- Conteúdo do modal -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div style="display: flex; gap: 10px">
+                        <label>Nome da Campanha:</label>
+                        <p>NOME DA CAMPANHA</p>
+                    </div>
+                    <label>Valor arrecadado:</label>
+                    <input type="number" value="0000" />
+                </div>
+            </div>
+        </div>
+
+        <div class="main-perfil pag">
+            <span>PERFIL</span>
+        </div>
+    </main>
+</body>
+
+</html>
