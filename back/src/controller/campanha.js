@@ -105,7 +105,9 @@ async function atualizarCampanha(req, res) {
         descricao,
         prazo,
         contato,
-        valor_arrecadado
+        valor_arrecadado,
+        chave_pix,
+        atualizacoes
       }
     });
 

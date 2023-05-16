@@ -8,9 +8,9 @@
 }
 
 :root {
-    --color1: purple;
+    --color1: rgb(160, 0, 117);
     --color2: #ffffff;
-    --color3: #ededed;
+    --color3: #8d8d8d;
     --color4: #f8f8f8;
     --color5: #f0006cd0;
     --color6: #da007bd0;
@@ -41,16 +41,29 @@ a {
     margin: 20px;
 }
 
-.all-cards {
+main>p {
+    padding: 15px;
+    color: var(--color3)
+}
+
+h1 {
+    padding-top: 15px;
+    padding-left: 15px;
+    color: var(--color1);
+}
+
+.main-campanhas {
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 30px;
+    padding-left: 20px;
 }
 
 .card {
     display: flex;
     align-items: center;
-    justify-content: center;
+    text-align: center;
     flex-direction: column;
     background-color: #ffffff;
     height: 300px;
@@ -61,12 +74,9 @@ a {
     -moz-box-shadow: 3px 5px 8px 0px rgba(176, 176, 176, 0.14);
 }
 
-.img-campanha {
-    height: 120px;
-}
-
 .card>p {
-    font-size: 20px;
+    color: var(--color7);
+    font-size: 16px;
 }
 
 .card:hover {
@@ -83,6 +93,19 @@ a {
 .nova-campanha>span {
     font-size: 70px;
     color: var(--color7)
+}
+
+.campanha {
+    border-radius: 10px;
+    gap: 20px;
+}
+
+.campanha>img {
+    height: 190px;
+    width: 100%;
+    border-radius: 19px 19px 0px 0px;
+    -webkit-border-radius: 10px 10px 0px 0px;
+    -moz-border-radius: 19px 19px 0px 0px;
 }
 
 .selected-option {
@@ -117,6 +140,24 @@ a {
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+}
+
+.modal-content>div {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.modal-content>div label,
+textarea {
+    display: inline-block;
+    width: 500px;
+    text-align: left;
+}
+
+.modal-content>div p {
+    display: inline-block;
+    width: calc(100% - 120px);
 }
 
 .close {
