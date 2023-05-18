@@ -26,53 +26,76 @@
         <h1>Minhas Campanhas</h1>
         <div class="main-campanhas pag">
             <div class="all-cards">
-                <div class="card nova-campanha">
+                <div class="card nova-campanha" onclick="cadastrarNovaCampanha()">
                     <span>+</span>
                 </div>
-                <div class="card campanha occult" onclick="abrirModal()">
+                <div class="card campanha occult" onclick="abrirModal(this)">
                     <span class="n-id occult"></span>
                     <img class="img-campaign" src="../../../docs/imgs/logo.png" />
                     <p class="name-campaign">Nome campanha</p>
                 </div>
             </div>
-            <div id="myModal" class="modal">
+
+            <div id="modal-nova-campanha" class="modal modal-novo occult">
+                <div class="modal-content content-nova-campanha">
+                    <span class="close" onclick="fecharModal()">&times;</span>
+                    <input id="titulo-novo" placeholder="Digite o nome da campanha" />
+                    <textarea id="descricao-novo" placeholder="Digite a descrição da campanha"></textarea>
+                    <input id="objetivo-novo" placeholder="Digite o objetivo da campanha" />
+                    <input id="prazo-novo" placeholder="Até quando sua campanha ficará disponível?" type="date" />
+                    <input id="meta-novo" placeholder="Digite quanto dinheiro sua campanha precisa alcançar"
+                        type="number" />
+                    <input id="chave-pix-novo" placeholder="Digite sua chave Pix" />
+                    <button id="criar-nova-campanha">Criar nova campanha</button>
+                </div>
+            </div>
+
+            <div id="modal-campanha" class="modal modal-campanha">
                 <div class="modal-content">
                     <span class="close" onclick="fecharModal()">&times;</span>
                     <div>
                         <label>Última Atualização:</label>
-                        <span>DATA</span>
+                        <span id="data-atualizacao">DATA</span>
                     </div>
+
                     <div>
                         <label>Nome da Campanha:</label>
-                        <span>NOME DA CAMPANHA</span>
+                        <span id="nome-campanha">NOME DA CAMPANHA</span>
                     </div>
+
                     <div>
                         <label>Objetivo:</label>
-                        <textarea rows="3"
+                        <textarea id="objetivo" rows="3"
                             cols="250">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus accusantium dolorum ipsum non est temporibus, soluta totam sequi, nam quo fugiat repellendus suscipit qui quae! Sit doloremque modi aut necessitatibus.</textarea>
                     </div>
+
                     <div>
                         <label>Meta:</label>
-                        <span>R$2000</span>
+                        <span id="meta">R$2000</span>
                     </div>
+
                     <div>
                         <label>Valor arrecadado:</label>
                         <input id="arrecadado" type="number" value="0000" disabled />
                     </div>
+
                     <div>
                         <label>Chave Pix:</label>
                         <input id="chave-pix" type="text" value="1234" disabled />
                     </div>
+
                     <div>
                         <label>E-mail para contato:</label>
                         <input id="email-contato" value="contato@contato.com" disabled></span>
                     </div>
+
                     <div>
                         <button>Editar</button>
                         <button class="occult">Salvar</button>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
 
         <div class="main-perfil pag">

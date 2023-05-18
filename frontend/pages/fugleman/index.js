@@ -3,6 +3,14 @@ var mainPerfil = document.querySelector('.main-perfil');
 var minhasCampanhas = document.querySelector('#minhas-campanhas');
 var meuPerfil = document.querySelector('#meu-perfil');
 var itemCard = document.querySelector('.campanha')
+var itemModal = document.querySelector('.modal')
+
+function cadastrarNovaCampanha() {
+    let novaCampanha = document.querySelector('.modal-novo')
+    novaCampanha.classList.remove('occult')
+    novaCampanha.style.display = 'block'
+    console.log(novaCampanha)
+}
 
 function carregarCampanhas() {
     minhasCampanhas.classList.add('selected-option');
@@ -37,19 +45,47 @@ function carregarCampanhas() {
 }
 
 // Obtém o elemento modal
-var modal = document.querySelector("#myModal");
+var modalCampanha = document.querySelector("#modal-campanha");
+var modalNovaCampanha = document.querySelector("#modal-nova-campanha");
 
 // Obtém o elemento de fechar
 var span = document.querySelector("#close");
 
 // Quando o usuário clica no botão, abre o modal
-function abrirModal() {
-    modal.style.display = "block";
+function abrirModal(e) {
+    modalCampanha.style.display = "block";
+    let nId = Number(e.querySelector(".n-id").innerHTML);
+
+    fetch("http://localhost:3300/campanha")
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            const item = data.find(item => item.id == nId);
+
+            let dataAtualizacao = document.querySelector('#data-atualizacao')
+            let nomeCampanha = document.querySelector('#nome-campanha')
+            let objetivo = document.querySelector('#objetivo')
+            let meta = document.querySelector('#meta')
+            let arrecadado = document.querySelector('#arrecadado')
+            let chavePix = document.querySelector('#chave-pix')
+            let email = document.querySelector('#chave-pix')
+
+            dataAtualizacao.innerHTML = item.atualizacoes
+            nomeCampanha.innerHTML = item.titulo
+            objetivo.innerHTML = item.descricao
+            meta.innerHTML = item.valor_meta
+            arrecadado.innerHTML = item.valor_arrecadado
+            chavePix.innerHTML = item.chave_pix
+            email.innerHTML = item.contato
+
+        })
 }
 
 // Quando o usuário clica no elemento de fechar, fecha o modal
 function fecharModal() {
-    modal.style.display = "none";
+    modalCampanha.style.display = "none";
+    modalNovaCampanha.style.display = "none";
 }
 
 
