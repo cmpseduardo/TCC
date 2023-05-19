@@ -84,7 +84,7 @@ h2 {
 }
 
 #apoiar {
-    background-color: #65bf1b;
+    background-color: #f86161;
     padding: 15px;
     font-size: 20px;
     color: white;
@@ -94,7 +94,7 @@ h2 {
 }
 
 #apoiar:hover {
-    background-color: #4e9613;
+    background-color: #c63e3e;
     cursor: pointer
 }
 

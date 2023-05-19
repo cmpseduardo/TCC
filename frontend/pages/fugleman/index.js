@@ -71,7 +71,7 @@ function abrirModal(e) {
             let chavePix = document.querySelector('#chave-pix')
             let email = document.querySelector('#chave-pix')
 
-            dataAtualizacao.innerHTML = item.atualizacoes
+            dataAtualizacao.innerHTML = Intl.DateTimeFormat('pt-BR', { dateStyle: 'short', timeStyle: 'short' }).format(new Date(item.atualizacoes))
             nomeCampanha.innerHTML = item.titulo
             objetivo.innerHTML = item.descricao
             meta.innerHTML = item.valor_meta
@@ -96,3 +96,31 @@ function carregarPerfil() {
     mainPerfil.classList.remove('occult');
     mainCampanhas.classList.add('occult');
 }
+
+// function criarCampanha() {
+    // const data = {
+    //     "tipo":"dinheiro",
+    //     "titulo":"Campanha de arrecadação para crianças carentes",
+    //     "descricao":"Estamos realizando uma campanha de arrecadação de dinheiro para ajudar crianças carentes da nossa cidade. Contamos com a sua colaboração!",
+    //     "objetivo":"Ajude você também",
+    //     "data_inicio":"2023-04-20T00:00:00.000Z",
+    //     "prazo":"30 dias",
+    //     "contato":"contato@campanha.com.br",
+    //     "valor_meta":15000,
+    //     "valor_arrecadado":5000,
+    //     "atualizacoes":"2023-04-17T10:30:00.000Z",
+    //     "chave_pix":"123456789",
+    //     "organizadorid":
+    // }
+
+//     const options = {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body:
+//     };
+
+//     fetch('http://localhost:3300/campanhacamp', options)
+//         .then(response => response.json())
+//         .then(response => console.log(response))
+//         .catch(err => console.error(err));
+// }

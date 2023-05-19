@@ -38,15 +38,23 @@
 
             <div id="modal-nova-campanha" class="modal modal-novo occult">
                 <div class="modal-content content-nova-campanha">
-                    <span class="close" onclick="fecharModal()">&times;</span>
-                    <input id="titulo-novo" placeholder="Digite o nome da campanha" />
-                    <textarea id="descricao-novo" placeholder="Digite a descrição da campanha"></textarea>
-                    <input id="objetivo-novo" placeholder="Digite o objetivo da campanha" />
-                    <input id="prazo-novo" placeholder="Até quando sua campanha ficará disponível?" type="date" />
-                    <input id="meta-novo" placeholder="Digite quanto dinheiro sua campanha precisa alcançar"
-                        type="number" />
+                    <div>
+                        <span class="close" onclick="fecharModal()">&times;</span>
+                        <input id="titulo-novo" placeholder="Digite o nome da campanha" />
+                        <textarea id="descricao-novo" placeholder="Digite a descrição da campanha"></textarea>
+                    </div>
+                    <div>
+                        <input id="objetivo-novo" placeholder="Digite o objetivo da campanha" />
+                        <label for="">Até quando sua campanha ficará disponível?</label>
+                        <input id="prazo-novo" type="date" />
+                        <input id="meta-novo" placeholder="Digite quanto dinheiro sua campanha precisa alcançar"
+                            type="number" />
+                    </div>
                     <input id="chave-pix-novo" placeholder="Digite sua chave Pix" />
-                    <button id="criar-nova-campanha">Criar nova campanha</button>
+                    <div>
+                        <button id="criar-nova-campanha">Criar nova campanha</button>
+                        <button id="cancelar" onclick="fecharModal()">Cancelar</button>
+                    </div>
                 </div>
             </div>
 

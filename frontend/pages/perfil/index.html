@@ -8,17 +8,18 @@
     <link rel="icon" type="image/png" href="../../docs/imgs/logo.png">
     <link rel="stylesheet" href="./../../global/style.css">
     <link rel="stylesheet" href="style.css">
+    <script src="./index.js" defer></script>
     <title>Perfil [Organizador]</title>
 </head>
 
-<body>
+<body onload="carregarPerfil()">
     <header>
-        <a href="../home/index.html"><img src="../../docs/imgs/logo.png" class="img-header"></a>
+        <a href="../home/index.html"><img src="../../../docs/imgs/logo.png" class="img-header"></a>
         <span>Contribua+</span>
         <button id="cadastrar" onclick="window.location.href = '../register/index.html'">Comece sua campanha</button>
         <div class="div-header">
             <input id="buscar" placeholder="Busque por um campanha específica" />
-            <button id="pesquisar"><img src="../../docs/imgs/lupa-white.png"></button>
+            <button id="pesquisar"><img src="../../../docs/imgs/lupa-white.png"></button>
         </div>
         <button id="fazer-login" onclick="window.location.href = '../login/index.html'">Fazer login</button>
     </header>
@@ -101,11 +102,11 @@
                 </div>
                 <div class="infos">
                     <div>
-                        <img src="../../docs/imgs/local-icon.png" />
+                        <img src="../../../docs/imgs/local-icon.png" />
                         <span>São Paulo</span>
                     </div>
                     <div>
-                        <img src="../../docs/imgs/etiqueta-icon.png" />
+                        <img src="../../../docs/imgs/etiqueta-icon.png" />
                         <span>Social</span>
                     </div>
                 </div>
