@@ -51,9 +51,10 @@ var modalNovaCampanha = document.querySelector("#modal-nova-campanha");
 // Obtém o elemento de fechar
 var span = document.querySelector("#close");
 
-// Quando o usuário clica no botão, abre o modal
+// Quando o usuário clica no card, abre o modal
 function abrirModal(e) {
     modalCampanha.style.display = "block";
+    modalCampanha.style.visibility = "visible";
     let nId = Number(e.querySelector(".n-id").innerHTML);
 
     fetch("http://localhost:3300/campanha")
@@ -90,6 +91,7 @@ function fecharModal() {
 
 
 function carregarPerfil() {
+    document.querySelector('h1').innerHTML = "Meu Perfil"
     minhasCampanhas.classList.remove('selected-option');
     meuPerfil.classList.add('selected-option');
     meuPerfil.classList.add('selected-option');

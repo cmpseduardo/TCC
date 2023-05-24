@@ -26,7 +26,7 @@ body {
 header {
     display: flex;
     align-items: center;
-    height: 50px;
+    height: 70px;
     width: 100vw;
     background-color: var(--color1);
 }
@@ -38,6 +38,16 @@ header {
 a {
     color: white;
     text-decoration: none;
+    margin-left: 250px;
+    margin-right: 220px;
+}
+
+#config-perfil>img {
+    height: 50px;
+    margin-top: 10px
+}
+
+main {
     margin: 20px;
 }
 
@@ -53,6 +63,7 @@ h1 {
 }
 
 .main-campanhas {
+    margin: 30px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -124,6 +135,7 @@ h1 {
 
 .modal {
     display: none;
+    visibility: hidden;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -220,4 +232,70 @@ textarea {
 
 textarea {
     resize: none;
+}
+
+.main-perfil {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 300px;
+}
+
+.main-perfil>div {
+    margin: 15px;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+label {
+    width: 120px;
+    /* Ajuste a largura da label conforme necessário */
+    text-align: left;
+    margin-right: 10px;
+}
+
+input {
+    width: 200px;
+    /* Ajuste a largura do input conforme necessário */
+}
+
+#editar-perfil {
+    width: 150px;
+    margin-top: 60px;
+    background-color: var(--color1);
+    color: white;
+    border: none;
+    padding: 5px;
+    font-weight: 200px;
+}
+
+.rede-social {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.rede-social>div>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+}
+
+.rede-social-icon {
+    height: 50px;
+    width: 50px;
+}
+
+.rede-social>div>div>input {
+    width: 250px;
+    margin: 25px;
+}
+
+.rede-social>div>div>input::placeholder {
+    text-align: center;
 }

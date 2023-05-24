@@ -16,13 +16,13 @@
         <nav>
             <a id="minhas-campanhas" href="#" onclick="window.location.reload()">Minhas Campanhas</a>
             <a id="meu-perfil" href="#" onclick="carregarPerfil()">Meu Perfil</a>
+            <a id="config-perfil"><img src="../../../docs/imgs/logo.png"></a>
         </nav>
     </header>
 
     <main>
         <p>Não se esqueça de atualizar o valor das campanhas. Após uma semana sem atualização, sua campanha ficará
             indisponível.</p>
-
         <h1>Minhas Campanhas</h1>
         <div class="main-campanhas pag">
             <div class="all-cards">
@@ -56,58 +56,103 @@
                         <button id="cancelar" onclick="fecharModal()">Cancelar</button>
                     </div>
                 </div>
-            </div>
 
-            <div id="modal-campanha" class="modal modal-campanha">
-                <div class="modal-content">
-                    <span class="close" onclick="fecharModal()">&times;</span>
-                    <div>
-                        <label>Última Atualização:</label>
-                        <span id="data-atualizacao">DATA</span>
-                    </div>
+                <div id="modal-campanha" class="modal modal-campanha">
+                    <div class="modal-content">
+                        <span class="close" onclick="fecharModal()">&times;</span>
+                        <div>
+                            <label>Última Atualização:</label>
+                            <span id="data-atualizacao">DATA</span>
+                        </div>
 
-                    <div>
-                        <label>Nome da Campanha:</label>
-                        <span id="nome-campanha">NOME DA CAMPANHA</span>
-                    </div>
+                        <div>
+                            <label>Nome da Campanha:</label>
+                            <span id="nome-campanha">NOME DA CAMPANHA</span>
+                        </div>
 
-                    <div>
-                        <label>Objetivo:</label>
-                        <textarea id="objetivo" rows="3"
-                            cols="250">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus accusantium dolorum ipsum non est temporibus, soluta totam sequi, nam quo fugiat repellendus suscipit qui quae! Sit doloremque modi aut necessitatibus.</textarea>
-                    </div>
+                        <div>
+                            <label>Objetivo:</label>
+                            <textarea id="objetivo" rows="3"
+                                cols="250">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus accusantium dolorum ipsum non est temporibus, soluta totam sequi, nam quo fugiat repellendus suscipit qui quae! Sit doloremque modi aut necessitatibus.</textarea>
+                        </div>
 
-                    <div>
-                        <label>Meta:</label>
-                        <span id="meta">R$2000</span>
-                    </div>
+                        <div>
+                            <label>Meta:</label>
+                            <span id="meta">R$2000</span>
+                        </div>
 
-                    <div>
-                        <label>Valor arrecadado:</label>
-                        <input id="arrecadado" type="number" value="0000" disabled />
-                    </div>
+                        <div>
+                            <label>Valor arrecadado:</label>
+                            <input id="arrecadado" type="number" value="0000" disabled />
+                        </div>
 
-                    <div>
-                        <label>Chave Pix:</label>
-                        <input id="chave-pix" type="text" value="1234" disabled />
-                    </div>
+                        <div>
+                            <label>Chave Pix:</label>
+                            <input id="chave-pix" type="text" value="1234" disabled />
+                        </div>
 
-                    <div>
-                        <label>E-mail para contato:</label>
-                        <input id="email-contato" value="contato@contato.com" disabled></span>
-                    </div>
+                        <div>
+                            <label>E-mail para contato:</label>
+                            <input id="email-contato" value="contato@contato.com" disabled></span>
+                        </div>
 
-                    <div>
-                        <button>Editar</button>
-                        <button class="occult">Salvar</button>
+                        <div>
+                            <button>Editar</button>
+                            <button class="occult">Salvar</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        </div>
+
 
         <div class="main-perfil pag">
-            <span>PERFIL</span>
+            <div class="form">
+                <div class="form-row">
+                    <label for="nome">Nome</label>
+                    <input id="nome" disabled />
+                </div>
+                <div class="form-row">
+                    <label for="cpf-cnpj">CPF/CNPJ</label>
+                    <input id="cpf-cnpj" disabled />
+                </div>
+                <div class="form-row">
+                    <label for="email">E-mail</label>
+                    <input id="email" disabled />
+                </div>
+                <div class="form-row">
+                    <label for="telefone">Telefone</label>
+                    <input id="telefone" disabled />
+                </div>
+                <button id="editar-perfil">Editar</button>
+            </div>
+
+            <div class="rede-social">
+                <div>
+                    <div>
+                        <img class="rede-social-icon"
+                            src="https://png.pngtree.com/png-vector/20221018/ourmid/pngtree-instagram-icon-png-image_6315974.png">
+                        <input placeholder="Cole a URL do seu perfil" disabled />
+                    </div>
+                    <div>
+                        <img class="rede-social-icon"
+                            src="https://www.edigitalagency.com.au/wp-content/uploads/Facebook-logo-blue-circle-large-transparent-png.png">
+                        <input placeholder="Cole a URL da sua página/perfil" disabled />
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img class="rede-social-icon"
+                            src="https://upload.wikimedia.org/wikinews/pt/thumb/a/a3/Twitter_bird_logo.svg/2048px-Twitter_bird_logo.svg.png">
+                        <input placeholder="Cole a URL do seu perfil" disabled />
+                    </div>
+                    <div>
+                        <img class="rede-social-icon"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png">
+                        <input placeholder="Digite seu número de telefone" disabled />
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 </body>
