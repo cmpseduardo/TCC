@@ -12,7 +12,7 @@
     <title>Perfil [Organizador]</title>
 </head>
 
-<body onload="carregarPerfil()">
+<body onload="carregarPerfil(), carregarCampanhas(), contarValorTotal(), contarCampanhas()">
     <header>
         <a href="../home/index.html"><img src="../../../docs/imgs/logo.png" class="img-header"></a>
         <span>Contribua+</span>
@@ -62,7 +62,7 @@
             <div class="info-campanha">
                 <div class="total-arrecadado">
                     <p style="font-weight: bold;">Total Arrecado</p>
-                    <span class="valor">R$6.000,000</span>
+                    <span class="valor-total">0</span>
                 </div>
 
                 <div class="n-campanha">
@@ -87,12 +87,11 @@
 
         <h1>Campanhas desse organizador</h1>
         <div class="cards">
-            <div class="card">
+            <div class="card occult">
                 <img class="img-campanha"
                     src="https://blog-leiturinha-novo.s3.us-east-1.amazonaws.com/production/uploads/2022/01/iStock-1166576788-1.jpg" />
                 <div class="texts">
                     <p class="nome-campanha">Criança Alegre - Ajude Crianças</p>
-                    <p class="nome-organizador">por Fulano</p>
                     <p class="descricao-campanha">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Dignissimos
                         incidunt unde molestias, accusamus perspiciatis illo! Nostrum nemo enim quae, accusamus
