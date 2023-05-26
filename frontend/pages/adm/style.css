@@ -285,32 +285,89 @@ td {
     display: none;
 }
 
-.card-campanha {
-    background-color: var(--background-color3);
-    height: 300px;
-    width: 500px;
-    border-radius: 10px;
-    margin: 30px;
-    gap: 30px;
+.cards {
+    display: flex;
 }
 
-.card-campanha>.img-campanha {
-    background-color: rgb(213, 213, 213);
-    height: 100px;
-    width: 100px;
-}
 
-.card-organizador {
-    background-color: var(--background-color3);
-    height: 350px;
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
     width: 350px;
+    height: 550px;
     border-radius: 10px;
-    margin: 30px;
-    gap: 30px;
+    margin: 20px;
+    text-align: left;
+    box-shadow: 0 0 6px 0 rgba(121, 128, 139, .22);
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
 }
 
-.card-organizador>.img-organizador {
-    background-color: rgb(213, 213, 213);
-    height: 100px;
-    width: 100px;
+.card:hover {
+    transform: scale(1.05)
+}
+
+
+.card>.img-campanha {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.card>.texts {
+    padding: 15px;
+    height: 300%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.card>.texts>.nome-campanha {
+    font-weight: 700;
+}
+
+.card>.texts>.nome-organizador {
+    color: #79808b;
+}
+
+.card>.texts>.descricao-campanha {
+    color: #2d2d2e;
+    margin-top: 5px;
+    text-align: left;
+    line-height: 23px;
+    font-size: 14px;
+}
+
+.card>.infos {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(241, 241, 241);
+    height: 100%;
+}
+
+.card>.infos>div {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    gap: 5px;
+}
+
+.card>.infos>div>img {
+    height: 25px;
+    width: 25px;
+}
+
+.card>.infos>div>span {
+    padding-top: 5px;
+    margin-left: 2px;
+    font-size: 15px;
+    color: #656565;
+}
+
+.occult {
+    display: none;
+    visibility: hidden;
 }

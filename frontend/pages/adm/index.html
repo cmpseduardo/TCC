@@ -11,7 +11,7 @@
     <script src="./index.js" defer></script>
 </head>
 
-<body>
+<body onload="carregarCampanhas()">
     <header>
 
         <div class="logosec">
@@ -30,7 +30,7 @@
                         <h3>Painel</h3>
                     </div>
 
-                    <div class="nav-option option2" onclick="carregarCampanhas()">
+                    <div class="nav-option option2" onclick="carregarTelaCampanhas()">
                         <img src="../../../docs/imgs/icon-doacao.png" class="nav-img campanha-icon">
                         <h3>Campanhas</h3>
                     </div>
@@ -126,9 +126,30 @@
                 <input placeholder="Digite o nome da campanha" style="width: 200px;" />
                 <button>Buscar</button>
             </div>
-            <div>
-                <div class="card-campanha">
-                    <div class="img-campanha"></div>
+            <div class="cards">
+                <div class="card occult">
+                    <span class="id-campanha" id="id-campanha"></span>
+                    <img class="img-campanha"
+                        src="https://blog-static.petlove.com.br/wp-content/uploads/2022/11/30161259/racao-para-cachorro-escolher-Petlove.jpg" />
+                    <div class="texts">
+                        <p class="nome-campanha">ONG Tal - Doação de Ração</p>
+                        <p class="nome-organizador">por Fulano</p>
+                        <p class="descricao-campanha">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Dignissimos
+                            incidunt unde molestias, accusamus perspiciatis illo! Nostrum nemo enim quae, accusamus eum
+                            cumque excepturi laborum deserunt eius. Deleniti minus commodi tempora.
+                        </p>
+                    </div>
+                    <div class="infos">
+                        <div>
+                            <img src="../../../docs/imgs/local-icon.png" />
+                            <span>São Paulo</span>
+                        </div>
+                        <div>
+                            <img src="../../../docs/imgs/etiqueta-icon.png" />
+                            <span>Animal</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

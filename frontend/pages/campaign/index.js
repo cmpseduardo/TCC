@@ -12,6 +12,7 @@ function carregar() {
                 if (campanha.id == idCampanha) {
                     let nomeCampanha = document.querySelector("h1")
                     let nomeOrganizador = document.querySelector("h2")
+                    let idOrganizador = document.querySelector(".id-organizador")
                     let img = document.querySelector(".img-campanha")
                     let meta = document.querySelector(".valor-meta")
                     let arrecadado = document.querySelector(".valor-arrecadado")
@@ -20,11 +21,16 @@ function carregar() {
                     let resumo = document.querySelector(".breve-resumo")
                     let descricao = document.querySelector(".descricao")
 
+                    let valorMeta = campanha.valor_meta.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                    let valorArrecadado = campanha.valor_arrecadado.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+
                     nomeCampanha.innerHTML = campanha.titulo
                     nomeOrganizador.innerHTML = campanha.organizador.nome
+                    idOrganizador.innerHTML = campanha.organizador.id
                     img.src = `../../../back/${campanha.imagens[0].caminho_imagem}`
-                    meta.innerHTML = `R$${campanha.valor_meta}`
-                    arrecadado.innerHTML = `R$${campanha.valor_arrecadado}`
+                    meta.innerHTML = valorMeta
+                    arrecadado.innerHTML = valorArrecadado
                     nomeOrganizadorCard.innerHTML = campanha.organizador.nome
 
                     resumo.innerHTML = campanha.objetivo
@@ -35,4 +41,9 @@ function carregar() {
                 // novoItem.classList.remove("hidden")
             })
         })
+}
+
+function levarPerfil(e) {
+    let idPerfil = document.querySelector(".id-organizador").innerHTML
+    window.location.href = `http://127.0.0.1:5500/frontend/pages/perfil/index.html?id=${idPerfil}`
 }

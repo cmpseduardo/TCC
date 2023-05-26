@@ -70,16 +70,24 @@ function carregarCampanhas() {
                     let novoItem = itemCampanha.cloneNode(true)
                     novoItem.classList.remove('occult')
 
+                    let idCampanha = novoItem.querySelector('#id-campanha')
                     let imgCampanha = novoItem.querySelector('.img-campanha')
                     let nomeCampanha = novoItem.querySelector('.nome-campanha')
                     let descCampanha = novoItem.querySelector('.descricao-campanha')
 
+                    idCampanha.innerHTML = item.id
+                    imgCampanha.src = `../../../back/${item.imagens[0].caminho_imagem}`
                     nomeCampanha.innerHTML = item.titulo
                     descCampanha.innerHTML = item.descricao
-                    imgCampanha.src = `../../../back/${item.imagens[0].caminho_imagem}`
 
                     document.querySelector('.cards').appendChild(novoItem)
                 }
             })
         })
+}
+
+
+function abrirCampanha(e) {
+    let idCampanha = e.querySelector("#id-campanha").innerHTML
+    window.location.href = `http://127.0.0.1:5500/frontend/pages/campaign/index.html?id=${idCampanha}`
 }
