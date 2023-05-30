@@ -10,52 +10,62 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model nivelAcesso { 
+model nivelAcesso { //OK
   id Int @id @default(autoincrement())
-  tipo Int // 1 - Organizador 2 - Administrador
+  tipo Int // 1- ORGANIZADOR 2- ADMINISTRADOR
   cadastros cadastro[]
 }
 
-
-model cadastro { //ESTÁ OK - LIBERADO PARA TODOS OS CAMPOS SEREM ALTERADOS
+model cadastro { //OK - LIBERADO PARA TODOS OS CAMPOS SEREM ALTERADOS
   id Int @id @default(autoincrement())
   nome String
+  descricao String
   cpf String? @unique
   cnpj String? @unique
   email String @unique
   telefone String
   senha String
+  instagram String?
+  facebook String?
+  twitter String?
+  whatsapp String?
+  site String?
   acessoid Int
   acesso nivelAcesso @relation(fields: [acessoid], references: [id], onDelete: Cascade )
   campanhas campanha[]
+  imagens imagemOrganizador[]
 }
 
-model campanha {
+model campanha { //OK
   id Int @id @default(autoincrement())
-  tipo String //Se a campanha é por dinheiro ou ação voluntária
+  categoria String
   titulo String
-  descricao String // opção de alterar
+  descricao String //OPÇÃO DE ALTERAR
   objetivo String
   data_inicio DateTime 
-  prazo String // opção de alterar
-  contato String // opção de alterar
+  prazo String //OPÇÃO DE ALTERAR
+  contato String //OPÇÃO DE ALTERAR
+  localizacao String //OPÇÃO ALTERAR
   valor_meta Float
-  valor_arrecadado Float? // opção de alterar
-  atualizacoes DateTime // opção de alterar -- verificar para enviar a data atual
-  chave_pix String // opção de alterar
-  // instagram String?
-  // facebook String?
-  // twitter String?
-  // whatsapp String?
-  // site String?
+  valor_arrecadado Float? //OPÇÃO DE ALTERAR
+  atualizacoes DateTime //OPÇÃO DE ALTERAR -- VERIFICAR POSSIBILIDADE DE ENVIAR DATA ATUAL
+  chave_pix String //OPÇÃO DE ALTERAR
   organizadorid Int
   organizador cadastro @relation(fields: [organizadorid], references: [id], onDelete: Cascade )
   imagens imagemCampanha[]
 }
 
-model imagemCampanha {
+model imagemCampanha { //OK
   id Int @id @default(autoincrement())
   caminho_imagem String
   campanhaid Int
   campanha campanha @relation(fields: [campanhaid], references: [id], onDelete: Cascade )
 }
+
+model imagemOrganizador { //OK
+  id Int @id @default(autoincrement())
+  caminho_imagem String
+  organizadorid Int
+  cadastro cadastro @relation(fields: [organizadorid], references: [id], onDelete: Cascade )
+}
+

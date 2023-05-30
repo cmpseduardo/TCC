@@ -24,7 +24,6 @@
         </div>
         <button id="fazer-login" onclick="window.location.href = '../login/index.html'">Fazer login</button>
     </header>
-
     <main>
         <section>
             <h1>[Título Campanha]</h1>
@@ -41,14 +40,13 @@
                             <span class="ja-arrecadou">Já arrecadou </span><span class="valor-arrecadado">[VALOR]</span>
                         </div>
                         <div onclick="levarPerfil(this)" class="organizador-foto-e-nome">
-                            <img
-                                src="https://scontent-gru1-2.xx.fbcdn.net/v/t39.30808-6/244302866_4376858019028061_3471028509914648623_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=iy7Mg9SKj2kAX9JhJuP&_nc_oc=AQnhpqXLbIK_7sAqyolS8rWpZfF1BfpJCaLQFTxlNVfctXqKHJXzSkp_eDsvp7GPWS0&_nc_ht=scontent-gru1-2.xx&oh=00_AfAGJVQsm4_MsD7rTQiKNHWXE1IQLTgivEcV4CJYqpoNJQ&oe=644A9A04" />
+                            <img class="img-organizador" />
                             <span class="nome-organizador-card">[Nome organizador]</span>
                             <span class="id-organizador occult"></span>
                         </div>
                     </div>
                     <div class="btns-apoie-site">
-                        <button id="apoiar">Apoiar essa campanha</button>
+                        <button id="apoiar" onclick="abrirPix()">Apoiar essa campanha</button>
                         <button class="btn-site">Visite o site</button>
                     </div>
                     <p class="text-alert">O valor não será atualizado em tempo real. O responsável</br>pela atualização
@@ -67,6 +65,15 @@
                 </div>
             </div>
         </section>
+
+        <div class="pix-campanha occult">
+            <div>
+                <button id="fechar-pix" onclick="fecharPix()">X</button>
+                <label>Chave PIX:</label>
+                <span class="chave-pix">AA</span>
+            </div>
+        </div>
+
         <section class="section-descricao">
             <p class="breve-resumo">[Breve Resumo]</p>
             <p class="descricao">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia dolor quam,

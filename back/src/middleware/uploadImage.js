@@ -4,7 +4,7 @@
   module.exports = multer({
       storage: multer.diskStorage({
           destination: (req, file, cb) => {
-              const folder = './public/upload/users';
+              const folder = './public/upload/users/camp';
               fs.mkdirSync(folder, { recursive: true });
               cb(null, folder);
           },

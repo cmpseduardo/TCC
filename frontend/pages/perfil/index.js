@@ -7,10 +7,13 @@ function carregarPerfil() {
         })
         .then((data) => {
             const item = data.find(item => item.id == idPerfil);
+            let imgPerfil = document.querySelector('.img-perfil')
             let nomeOrganizador = document.querySelector('.nome-organizador-info')
             let tipoConta = document.querySelector('.tipo-conta')
             let descPerfil = document.querySelector('.desc-perfil')
 
+            console.log(imgPerfil)
+            imgPerfil.src = `../../../back/${item.imagens[0].caminho_imagem}`
             nomeOrganizador.innerHTML = item.nome
             if (item.cnpj != null) {
                 tipoConta.innerHTML = "Pessoa Jurídica"
@@ -18,7 +21,7 @@ function carregarPerfil() {
             else if (item.cpf != null) {
                 tipoConta.innerHTML = "Pessoa Física"
             }
-            descPerfil.innerHTML = item.telefone //Trocar para descrição
+            descPerfil.innerHTML = item.descricao //Trocar para descrição
         })
 }
 

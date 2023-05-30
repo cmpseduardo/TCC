@@ -1,16 +1,14 @@
-const uploadUser = require('../middleware/uploadImage');
 const { PrismaClient } = require('@prisma/client');
-const prisma = new PrismaClient();
+const uploadUser = require('../middleware/uploadImage');
 
+const prisma = new PrismaClient();
 
 const createCampanha = async (req, res) => { //OK
   let campanhas = await prisma.campanha.create({
     data: req.body
   });
-
   res.status(200).json(campanhas).end();
 }
-
 
 const createImagem = async (req, res) => {
   uploadUser.single('image')(req, res, async (err) => {
@@ -64,13 +62,14 @@ const readTudo = async (req, res) => {
   let campanhas = await prisma.campanha.findMany({
     select: {
       id: true,
-      tipo: true,
+      categoria: true,
       titulo: true,
       descricao: true,
       objetivo: true,
       data_inicio: true,
       prazo: true,
       contato: true,
+      localizacao: true,
       valor_meta: true,
       valor_arrecadado: true,
       atualizacoes: true,
@@ -90,13 +89,12 @@ const readTudo = async (req, res) => {
       }
     }
   });
-
   res.status(200).json(campanhas).end();
 }
 
 async function atualizarCampanha(req, res) {
   const campanhaId = parseInt(req.params.id);
-  const { descricao, prazo, contato, valor_arrecadado } = req.body;
+  const { descricao, prazo, contato, localizacao, valor_arrecadado, chave_pix, atualizacoes} = req.body;
 
   try {
     const campanha = await prisma.campanha.update({
@@ -105,6 +103,7 @@ async function atualizarCampanha(req, res) {
         descricao,
         prazo,
         contato,
+        localizacao,
         valor_arrecadado,
         chave_pix,
         atualizacoes
@@ -127,7 +126,6 @@ const remove = async (req, res) => {
 
   res.status(200).send("Campanha excluída com sucesso!").end();
 };
-
 
 module.exports = {
   createImagem,

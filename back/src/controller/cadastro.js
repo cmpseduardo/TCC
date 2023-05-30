@@ -1,32 +1,29 @@
-const bcrypt = require('bcrypt')
-const { PrismaClient } = require('@prisma/client')
-const jwt = require("jsonwebtoken")
+const { PrismaClient } = require('@prisma/client');
+const bcrypt = require('bcrypt');
+const jwt = require("jsonwebtoken");
+const uploadUser = require('../middleware/uploadImageOrg');
 
-const prisma = new PrismaClient()
+const prisma = new PrismaClient();
 
-//todos os usuários ao se cadastrarem serão automáticamente usuário comum, somente o admnistrador, poderá adicionar novos adms
-// o endpoint de organizadores é o mesmo de cadastro
-
+//Todos os usuários ao se cadastrarem serão automáticamente usuários comuns, somente o admnistrador, poderá adicionar novos adms
+// O Endpoint de organizadores é o mesmo de cadastro
 
 const createAcesso = async (req, res) => { //OK
   let acesso = await prisma.nivelAcesso.create({
       data: req.body
   });
-
   res.status(200).json(acesso).end();
 }
 
-const updateAcesso = async (req, res) => {
+const updateAcesso = async (req, res) => { //OK
   let acesso = await prisma.nivelAcesso.update({
       where: {
           id:Number (req.params.id)
       },
       data: req.body
   });
-
   res.status(200).json(acesso).end();
 }
-
 
 const create = async (req, res) => { //ESTÁ OK
   bcrypt.genSalt(10, function(err, salt) {
@@ -51,22 +48,81 @@ const create = async (req, res) => { //ESTÁ OK
         })
 }
 
+const createImagem = async (req, res) => { //OK
+  uploadUser.single('image')(req, res, async (err) => {
+    if (err) {
+      return res.status(400).json({
+        erro: true,
+        mensagem: "Erro: " + err.message
+      });
+    }
+    if (!req.file) {
+      return res.status(400).json({
+        erro: true,
+        mensagem: "Erro: upload não realizado!"
+      });
+    }
+    // Criar o registro da imagem no banco de dados
+    const organizadorId = parseInt(req.body.organizadorId);
+    const caminhoImagem = req.file.path;
 
+    // Verificar se o organizador com o ID fornecido existe
+    const organizador = await prisma.cadastro.findUnique({
+      where: {
+        id: organizadorId,
+      },
+    });
+    if (!organizador) {
+      return res.status(400).json({
+        erro: true,
+        mensagem: "Erro: organizador não encontrado!"
+      });
+    }
+    const imagem = await prisma.imagemOrganizador.create({
+      data: {
+        caminho_imagem: caminhoImagem,
+        cadastro: {
+          connect: {
+            id: organizadorId,
+          },
+        },
+      },
+    });
+    return res.json({
+      erro: false,
+      mensagem: "Upload realizado com sucesso!",
+      imagem: imagem,
+    });
+  });
+};
+ 
 const read = async (req, res) => {
   let cadastro = await prisma.cadastro.findMany({
       select: {
           id: true,
           nome: true,
+          descricao: true,
           cpf: true,
           cnpj: true,
           email: true,
           telefone: true,
           senha: true,
+          instagram: true,
+          facebook: true,
+          twitter: true,
+          whatsapp: true,
+          site: true,
           acesso: {
               select: {
                   id: true,
                   tipo: true
               }
+          },
+          imagens: {
+            select: {
+              id: true,
+              caminho_imagem: true,
+            }
           }
         }
       });
@@ -92,7 +148,7 @@ const remove = async (req, res) => {
   });
 
   res.status(200).send("Cadastro excluído com sucesso!").end();
-};
+}
 
 const login = async (req, res) => {
     const cadastro = await prisma.cadastro.findFirstOrThrow({
@@ -122,8 +178,6 @@ const login = async (req, res) => {
     } else {
       res.status(404).json(cadastro ).end()
     }
-  
-  
   }
 
 module.exports = {
@@ -133,5 +187,7 @@ module.exports = {
     remove,
     login,
     createAcesso,
-    updateAcesso
+    updateAcesso,
+    createImagem
+    
 }
