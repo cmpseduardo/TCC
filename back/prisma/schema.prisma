@@ -10,62 +10,61 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model nivelAcesso { //OK
-  id Int @id @default(autoincrement())
-  tipo Int // 1- ORGANIZADOR 2- ADMINISTRADOR
+model nivelAcesso {
+  id        Int        @id @default(autoincrement())
+  tipo      Int // 1- ORGANIZADOR 2- ADMINISTRADOR
   cadastros cadastro[]
 }
 
-model cadastro { //OK - LIBERADO PARA TODOS OS CAMPOS SEREM ALTERADOS
-  id Int @id @default(autoincrement())
-  nome String
-  descricao String
-  cpf String? @unique
-  cnpj String? @unique
-  email String @unique
-  telefone String
-  senha String
+model cadastro {
+  id        Int                 @id @default(autoincrement())
+  nome      String
+  descricao String?
+  cpf       String?             @unique
+  cnpj      String?             @unique
+  email     String              @unique
+  telefone  String
+  senha     String
   instagram String?
-  facebook String?
-  twitter String?
-  whatsapp String?
-  site String?
-  acessoid Int
-  acesso nivelAcesso @relation(fields: [acessoid], references: [id], onDelete: Cascade )
+  facebook  String?
+  twitter   String?
+  whatsapp  String?
+  site      String?
+  acessoid  Int
+  acesso    nivelAcesso         @relation(fields: [acessoid], references: [id], onDelete: Cascade)
   campanhas campanha[]
-  imagens imagemOrganizador[]
+  imagens   imagemOrganizador[]
 }
 
-model campanha { //OK
-  id Int @id @default(autoincrement())
-  categoria String
-  titulo String
-  descricao String //OPÇÃO DE ALTERAR
-  objetivo String
-  data_inicio DateTime 
-  prazo String //OPÇÃO DE ALTERAR
-  contato String //OPÇÃO DE ALTERAR
-  localizacao String //OPÇÃO ALTERAR
-  valor_meta Float
+model campanha {
+  id               Int              @id @default(autoincrement())
+  categoria        String
+  titulo           String
+  descricao        String //OPÇÃO DE ALTERAR
+  objetivo         String
+  data_inicio      DateTime
+  prazo            String //OPÇÃO DE ALTERAR
+  contato          String //OPÇÃO DE ALTERAR
+  localizacao      String //OPÇÃO ALTERAR
+  valor_meta       Float
   valor_arrecadado Float? //OPÇÃO DE ALTERAR
-  atualizacoes DateTime //OPÇÃO DE ALTERAR -- VERIFICAR POSSIBILIDADE DE ENVIAR DATA ATUAL
-  chave_pix String //OPÇÃO DE ALTERAR
-  organizadorid Int
-  organizador cadastro @relation(fields: [organizadorid], references: [id], onDelete: Cascade )
-  imagens imagemCampanha[]
+  atualizacoes     DateTime //OPÇÃO DE ALTERAR -- VERIFICAR POSSIBILIDADE DE ENVIAR DATA ATUAL
+  chave_pix        String //OPÇÃO DE ALTERAR
+  organizadorid    Int
+  organizador      cadastro         @relation(fields: [organizadorid], references: [id], onDelete: Cascade)
+  imagens          imagemCampanha[]
 }
 
-model imagemCampanha { //OK
-  id Int @id @default(autoincrement())
+model imagemCampanha {
+  id             Int      @id @default(autoincrement())
   caminho_imagem String
-  campanhaid Int
-  campanha campanha @relation(fields: [campanhaid], references: [id], onDelete: Cascade )
+  campanhaid     Int
+  campanha       campanha @relation(fields: [campanhaid], references: [id], onDelete: Cascade)
 }
 
-model imagemOrganizador { //OK
-  id Int @id @default(autoincrement())
+model imagemOrganizador {
+  id             Int      @id @default(autoincrement())
   caminho_imagem String
-  organizadorid Int
-  cadastro cadastro @relation(fields: [organizadorid], references: [id], onDelete: Cascade )
+  organizadorid  Int
+  cadastro       cadastro @relation(fields: [organizadorid], references: [id], onDelete: Cascade)
 }
-

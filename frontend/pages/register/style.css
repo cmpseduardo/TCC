@@ -158,3 +158,30 @@ label {
     display: none;
     visibility: hidden;
 }
+
+.rede-social {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.rede-social>div>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+}
+
+.rede-social-icon {
+    height: 50px;
+    width: 50px;
+}
+
+.rede-social>div>div>input {
+    width: 250px;
+    margin: 25px;
+}
+
+.rede-social>div>div>input::placeholder {
+    text-align: center;
+}
