@@ -56,50 +56,49 @@
                         <button id="cancelar" onclick="fecharModal()">Cancelar</button>
                     </div>
                 </div>
+            </div>
+            <div id="modal-campanha" class="modal modal-campanha">
+                <div class="modal-content">
+                    <span class="close" onclick="fecharModal()">&times;</span>
+                    <div>
+                        <label>Última Atualização:</label>
+                        <span id="data-atualizacao">DATA</span>
+                    </div>
 
-                <div id="modal-campanha" class="modal modal-campanha">
-                    <div class="modal-content">
-                        <span class="close" onclick="fecharModal()">&times;</span>
-                        <div>
-                            <label>Última Atualização:</label>
-                            <span id="data-atualizacao">DATA</span>
-                        </div>
+                    <div>
+                        <label>Nome da Campanha:</label>
+                        <span id="nome-campanha">NOME DA CAMPANHA</span>
+                    </div>
 
-                        <div>
-                            <label>Nome da Campanha:</label>
-                            <span id="nome-campanha">NOME DA CAMPANHA</span>
-                        </div>
+                    <div>
+                        <label>Objetivo:</label>
+                        <textarea id="objetivo" rows="3" disabled
+                            cols="250">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus accusantium dolorum ipsum non est temporibus, soluta totam sequi, nam quo fugiat repellendus suscipit qui quae! Sit doloremque modi aut necessitatibus.</textarea>
+                    </div>
 
-                        <div>
-                            <label>Objetivo:</label>
-                            <textarea id="objetivo" rows="3"
-                                cols="250">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus accusantium dolorum ipsum non est temporibus, soluta totam sequi, nam quo fugiat repellendus suscipit qui quae! Sit doloremque modi aut necessitatibus.</textarea>
-                        </div>
+                    <div>
+                        <label>Meta:</label>
+                        <span id="meta">R$2000</span>
+                    </div>
 
-                        <div>
-                            <label>Meta:</label>
-                            <span id="meta">R$2000</span>
-                        </div>
+                    <div>
+                        <label>Valor arrecadado:</label>
+                        <input id="arrecadado" type="number" value="0000" disabled />
+                    </div>
 
-                        <div>
-                            <label>Valor arrecadado:</label>
-                            <input id="arrecadado" type="number" value="0000" disabled />
-                        </div>
+                    <div>
+                        <label>Chave Pix:</label>
+                        <input id="chave-pix" type="text" value="1234" disabled />
+                    </div>
 
-                        <div>
-                            <label>Chave Pix:</label>
-                            <input id="chave-pix" type="text" value="1234" disabled />
-                        </div>
+                    <div>
+                        <label>E-mail para contato:</label>
+                        <input id="email-contato" value="contato@contato.com" disabled></span>
+                    </div>
 
-                        <div>
-                            <label>E-mail para contato:</label>
-                            <input id="email-contato" value="contato@contato.com" disabled></span>
-                        </div>
-
-                        <div>
-                            <button>Editar</button>
-                            <button class="occult">Salvar</button>
-                        </div>
+                    <div>
+                        <button>Editar</button>
+                        <button class="occult">Salvar</button>
                     </div>
                 </div>
             </div>

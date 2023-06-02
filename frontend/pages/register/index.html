@@ -24,7 +24,7 @@
 
         <div class="pessoa-fisica hidden">
             <div class="div-voltar">
-                <button onclick="backForma()">&#60 Voltar</button>
+                <button onclick="backForm()">&#60 Voltar</button>
             </div>
             <div class="area-register">
                 <img src="../../../docs/imgs/logo.png">
@@ -72,7 +72,7 @@
 
         <div class="pessoa-juridica hidden">
             <div class="div-voltar">
-                <button onclick="backForma()">&#60 Voltar</button>
+                <button onclick="backForm()">&#60 Voltar</button>
             </div>
             <div class="area-register">
                 <img src="../../../docs/imgs/logo.png">
@@ -118,31 +118,47 @@
             </div>
         </div>
 
-        <div>
+        <div class="register-infos hidden">
             <div>
-                <textarea placeholder="Dê uma descrição ao seu perfil." rows="10" cols="70"></textarea>
-                <div>
-                    <img class="rede-social-icon"
-                        src="https://png.pngtree.com/png-vector/20221018/ourmid/pngtree-instagram-icon-png-image_6315974.png">
-                    <input placeholder="Cole a URL do seu perfil" />
-                </div>
-                <div>
-                    <img class="rede-social-icon"
-                        src="https://www.edigitalagency.com.au/wp-content/uploads/Facebook-logo-blue-circle-large-transparent-png.png">
-                    <input placeholder="Cole a URL da sua página/perfil" />
-                </div>
+                <textarea id="descricao-textarea" placeholder="Dê uma descrição ao seu perfil." rows="25"
+                    cols="70"></textarea>
             </div>
             <div>
-                <div>
+                <div class="rede-social-div">
+                    <img class="rede-social-icon"
+                        src="https://png.pngtree.com/png-vector/20221018/ourmid/pngtree-instagram-icon-png-image_6315974.png">
+                    <input placeholder="Cole a URL do seu perfil" id="instagram-link" />
+                    <span>Opcional</span>
+                </div>
+                <div class="rede-social-div">
+                    <img class="rede-social-icon"
+                        src="https://www.edigitalagency.com.au/wp-content/uploads/Facebook-logo-blue-circle-large-transparent-png.png">
+                    <input placeholder="Cole a URL da sua página/perfil" id="facebook-link" />
+                    <span>Opcional</span>
+                </div>
+                <div class="rede-social-div">
                     <img class="rede-social-icon"
                         src="https://upload.wikimedia.org/wikinews/pt/thumb/a/a3/Twitter_bird_logo.svg/2048px-Twitter_bird_logo.svg.png">
-                    <input placeholder="Cole a URL do seu perfil" />
+                    <input placeholder="Cole a URL do seu perfil" id="twitter-link" />
+                    <span>Opcional</span>
                 </div>
-                <div>
+                <div class="rede-social-div">
                     <img class="rede-social-icon"
                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png">
-                    <input placeholder="Digite seu número de telefone" />
+                    <input placeholder="Digite seu número de telefone" id="whatsapp-link" />
+                    <span>Opcional</span>
                 </div>
+                <div class="rede-social-div">
+                    <img class="rede-social-icon"
+                        src="https://www.pngplay.com/wp-content/uploads/12/Internet-Explorer-PNG-Background-Clip-Art.png">
+                    <input placeholder="Digite seu site" id="site-link" />
+                    <span>Opcional</span>
+                </div>
+                <div class="photo">
+                    <label>Defina uma foto de perfil</label>
+                    <input type="file">
+                </div>
+                <button id="finalizar-cadastro" onclick="finalizarCadastro()">Finalizar cadastro</button>
             </div>
         </div>
     </main>

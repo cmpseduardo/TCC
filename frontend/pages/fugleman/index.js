@@ -53,16 +53,19 @@ var span = document.querySelector("#close");
 
 // Quando o usuário clica no card, abre o modal
 function abrirModal(e) {
+
     modalCampanha.style.display = "block";
     modalCampanha.style.visibility = "visible";
     let nId = Number(e.querySelector(".n-id").innerHTML);
-
+    console.log(nId);
     fetch("http://localhost:3300/campanha")
         .then((response) => {
             return response.json();
         })
         .then((data) => {
+            console.log(data)
             const item = data.find(item => item.id == nId);
+            console.log(item)
 
             let dataAtualizacao = document.querySelector('#data-atualizacao')
             let nomeCampanha = document.querySelector('#nome-campanha')
@@ -75,8 +78,8 @@ function abrirModal(e) {
             dataAtualizacao.innerHTML = Intl.DateTimeFormat('pt-BR', { dateStyle: 'short', timeStyle: 'short' }).format(new Date(item.atualizacoes))
             nomeCampanha.innerHTML = item.titulo
             objetivo.innerHTML = item.descricao
-            meta.innerHTML = item.valor_meta
-            arrecadado.innerHTML = item.valor_arrecadado
+            meta.innerHTML = item.valor_meta.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            arrecadado.innerHTML = item.valor_arrecadado.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
             chavePix.innerHTML = item.chave_pix
             email.innerHTML = item.contato
 
