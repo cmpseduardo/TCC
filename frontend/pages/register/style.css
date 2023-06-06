@@ -154,11 +154,6 @@ label {
     text-decoration: none;
 }
 
-.hidden {
-    display: none;
-    visibility: hidden;
-}
-
 .rede-social {
     display: flex;
     flex-direction: row;
@@ -227,4 +222,9 @@ label {
 #finalizar-cadastro:hover {
     cursor: pointer;
     transform: scale(1.03);
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
 }

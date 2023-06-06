@@ -153,14 +153,13 @@ const remove = async (req, res) => {
 }
 
 const login = async (req, res) => {
-  const cadastro = await prisma.cadastro.findFirstOrThrow({
-    where: {
-      email: req.body.email
-    }
-  }).then((value) => { return (value) })
-    .catch((err) => { return { "erro": "Usuário não encontrado", "validation": false } })
+  try {
+    const cadastro = await prisma.cadastro.findFirstOrThrow({
+      where: {
+        email: req.body.email
+      }
+    });
 
-  if (cadastro.erro == null) {
     bcrypt.compare(req.body.senha, cadastro.senha).then((value) => {
       if (value) {
         let data = { "uid": cadastro.id, "role": cadastro.acesso }
@@ -176,11 +175,12 @@ const login = async (req, res) => {
       } else {
         res.status(201).json({ "erro": "Senha inválida", "validation": false }).end()
       }
-    })
-  } else {
-    res.status(404).json(cadastro).end()
+    });
+  } catch (err) {
+    res.status(404).json({ "erro": "Usuário não encontrado", "validation": false }).end();
   }
 }
+
 
 module.exports = {
   create,

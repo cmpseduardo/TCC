@@ -94,7 +94,7 @@ const readTudo = async (req, res) => {
 
 async function atualizarCampanha(req, res) {
   const campanhaId = parseInt(req.params.id);
-  const { descricao, prazo, contato, localizacao, valor_arrecadado, chave_pix, atualizacoes} = req.body;
+  const { descricao, prazo, contato, localizacao, valor_arrecadado, chave_pix, atualizacoes } = req.body;
 
   try {
     const campanha = await prisma.campanha.update({

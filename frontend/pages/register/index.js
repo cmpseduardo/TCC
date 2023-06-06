@@ -119,7 +119,35 @@ function finalizarCadastro() {
         .then(response => response.json())
         .then(response => console.log(response))
         .catch(err => console.error(err));
+
+    let fileInput = document.querySelector("#photo-user");
+
+    if (fileInput.files.length > 0) {
+        var file = fileInput.files[0];
+        var formData = new FormData();
+        formData.append("organizadorId", localStorage.getItem('id'));
+        formData.append("profilePhoto", file);
+        console.log(formData);
+
+        fetch("http://localhost:3300/cadastro/imagem", {
+            method: "POST",
+            body: formData
+        })
+
+            .then(function (response) {
+                if (response.ok) {
+                    console.log("Imagem enviada com sucesso!");
+                } else {
+                    throw new Error("Erro ao enviar a imagem. Status do response: " + response.status);
+                }
+            })
+            .catch(function (error) {
+                console.error(error);
+            });
+    }
 }
+
+
 
 
 /* https://api.whatsapp.com/send?phone=5519996371475 */

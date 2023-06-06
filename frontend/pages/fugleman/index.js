@@ -56,7 +56,9 @@ function abrirModal(e) {
 
     modalCampanha.style.display = "block";
     modalCampanha.style.visibility = "visible";
-    let nId = Number(e.querySelector(".n-id").innerHTML);
+    var nId = Number(e.querySelector(".n-id").innerHTML);
+    localStorage.setItem('idCampanha', nId);
+
     console.log(nId);
     fetch("http://localhost:3300/campanha")
         .then((response) => {
@@ -73,7 +75,7 @@ function abrirModal(e) {
             let meta = document.querySelector('#meta')
             let arrecadado = document.querySelector('#arrecadado')
             let chavePix = document.querySelector('#chave-pix')
-            let email = document.querySelector('#chave-pix')
+            let email = document.querySelector('#email-contato')
 
             dataAtualizacao.innerHTML = Intl.DateTimeFormat('pt-BR', { dateStyle: 'short', timeStyle: 'short' }).format(new Date(item.atualizacoes))
             nomeCampanha.innerHTML = item.titulo
@@ -81,7 +83,7 @@ function abrirModal(e) {
             meta.innerHTML = item.valor_meta.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
             arrecadado.innerHTML = item.valor_arrecadado.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
             chavePix.innerHTML = item.chave_pix
-            email.innerHTML = item.contato
+            email.value = item.contato
 
         })
 }
@@ -90,6 +92,7 @@ function abrirModal(e) {
 function fecharModal() {
     modalCampanha.style.display = "none";
     modalNovaCampanha.style.display = "none";
+    window.location.reload();
 }
 
 
@@ -102,30 +105,39 @@ function carregarPerfil() {
     mainCampanhas.classList.add('occult');
 }
 
-// function criarCampanha() {
-    // const data = {
-    //     "tipo":"dinheiro",
-    //     "titulo":"Campanha de arrecadação para crianças carentes",
-    //     "descricao":"Estamos realizando uma campanha de arrecadação de dinheiro para ajudar crianças carentes da nossa cidade. Contamos com a sua colaboração!",
-    //     "objetivo":"Ajude você também",
-    //     "data_inicio":"2023-04-20T00:00:00.000Z",
-    //     "prazo":"30 dias",
-    //     "contato":"contato@campanha.com.br",
-    //     "valor_meta":15000,
-    //     "valor_arrecadado":5000,
-    //     "atualizacoes":"2023-04-17T10:30:00.000Z",
-    //     "chave_pix":"123456789",
-    //     "organizadorid":
-    // }
+function editarCampanha() {
+    document.querySelector('#objetivo').disabled = false;
+    document.querySelector('#arrecadado').disabled = false;
+    document.querySelector('#chave-pix').disabled = false;
+    document.querySelector('#email-contato').disabled = false;
+    document.querySelector('.btn-editar').classList.add('occult')
+    document.querySelector('.btn-salvar').classList.remove('occult')
+}
 
-//     const options = {
-//         method: 'POST',
-//         headers: { 'Content-Type': 'application/json' },
-//         body:
-//     };
+function fazerAlteracao() {
+    const options = {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            "atualizacoes": new Date(),
+            "objetivo": document.querySelector('#objetivo').value,
+            "valor_arrecadado": Number(document.querySelector('#arrecadado').value),
+            "chave_pix": document.querySelector('#chave-pix').value,
+            "contato": document.querySelector('#email-contato').value,
+        })
+    };
 
-//     fetch('http://localhost:3300/campanhacamp', options)
-//         .then(response => response.json())
-//         .then(response => console.log(response))
-//         .catch(err => console.error(err));
-// }
+    let idCampanha = localStorage.getItem('idCampanha')
+
+    fetch(`http://localhost:3300/campanha/${idCampanha}`, options)
+        .then(response => response.json())
+        .then(response => console.log(response))
+        .catch(err => console.error(err));
+
+    document.querySelector('#objetivo').disabled = true;
+    document.querySelector('#arrecadado').disabled = true;
+    document.querySelector('#chave-pix').disabled = true;
+    document.querySelector('#email-contato').disabled = true;
+    document.querySelector('.btn-editar').classList.remove('occult')
+    document.querySelector('.btn-salvar').classList.add('occult')
+}

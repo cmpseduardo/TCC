@@ -21,7 +21,7 @@ h1 {
     flex-direction: column;
     background-color: white;
     width: 350px;
-    height: 550px;
+    min-height: 250px;
     border-radius: 10px;
     margin: 20px;
     text-align: left;

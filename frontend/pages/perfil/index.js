@@ -22,6 +22,23 @@ function carregarPerfil() {
                 tipoConta.innerHTML = "Pessoa Física"
             }
             descPerfil.innerHTML = item.descricao //Trocar para descrição
+
+            if (item.instagram == null) {
+
+            }
+            if (item.facebook == null) {
+
+            }
+            if (item.twitter == null) {
+
+            }
+            if (item.whatsapp == null) {
+
+            }
+            if (item.site == null) {
+
+            }
+
         })
 }
 
