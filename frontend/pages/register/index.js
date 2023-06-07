@@ -150,9 +150,5 @@ function finalizarCadastro() {
 
 
 
-/* https://api.whatsapp.com/send?phone=5519996371475 */
-
-
-
 
 

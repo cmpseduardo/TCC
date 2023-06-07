@@ -35,10 +35,16 @@ function carregar() {
 
                     resumo.innerHTML = campanha.objetivo
                     descricao.innerHTML = campanha.descricao
+
+                    carregarFotoOrganizador()
                 }
             })
         })
 
+}
+
+function carregarFotoOrganizador() {
+    let idPerfil = document.querySelector(".id-organizador").innerHTML
     fetch("http://localhost:3300/cadastro")
         .then((response) => {
             return response.json();
@@ -46,10 +52,77 @@ function carregar() {
         .then((data) => {
             console.log(data)
             data.forEach(campanha => {
-                let imgOrganizador = document.querySelector(".img-organizador")
+                if (campanha.id == idPerfil) {
+                    let imgOrganizador = document.querySelector(".img-organizador")
+                    imgOrganizador.src = `../../../back/${campanha.imagens[0].caminho_imagem}`
+                }
+            })
+            carregarRedesSociais()
+        })
+}
 
-                imgOrganizador.src = `../../../back/${campanha.imagens[0].caminho_imagem}`
-                console.log(imgOrganizador)
+function carregarRedesSociais() {
+    let idPerfil = document.querySelector(".id-organizador").innerHTML
+
+    fetch("http://localhost:3300/cadastro")
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            data.forEach(campanha => {
+                if (campanha.id == idPerfil) {
+                    let btnInstagram = document.querySelector('.btn-instagram')
+                    let btnFacebook = document.querySelector('.btn-facebook')
+                    let btnTwitter = document.querySelector('.btn-twitter')
+                    let btnWhatsApp = document.querySelector('.btn-whatsapp')
+                    let btnSite = document.querySelector('.btn-site')
+
+                    if (campanha.instagram == null || campanha.instagram == "") {
+                        btnInstagram.classList.add('occult')
+                    } else {
+                        btnInstagram.addEventListener('click', () => {
+                            window.location.href = `https://${campanha.instagram}`;
+                        });
+                    }
+
+
+                    if (campanha.facebook == null || campanha.facebook == "") {
+                        btnFacebook.classList.add('occult')
+                    } else {
+                        btnFacebook.addEventListener('click', () => {
+                            window.location.href = `https://${campanha.facebook}`;
+                        });
+                    }
+
+
+                    if (campanha.twitter == null || campanha.twitter == "") {
+                        btnTwitter.classList.add('occult')
+                    } else {
+                        btnTwitter.addEventListener('click', () => {
+                            window.location.href = `https://${campanha.twitter}`;
+                        });
+                    }
+
+
+                    if (campanha.whatsapp == null || campanha.whatsapp == "") {
+                        btnWhatsApp.classList.add('occult')
+                    } else {
+                        btnWhatsApp.addEventListener('click', () => {
+                            window.location.href = `https://api.whatsapp.com/send?phone=${campanha.whatsapp}`;
+                        });
+
+                    }
+
+
+                    if (campanha.site == null || campanha.site == "") {
+                        btnSite.classList.add('occult')
+                    } else {
+                        btnSite.addEventListener('click', () => {
+                            window.location.href = `https://${campanha.site}`;
+                        });
+
+                    }
+                }
 
             })
         })

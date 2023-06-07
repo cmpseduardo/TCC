@@ -12,7 +12,6 @@ function carregarPerfil() {
             let tipoConta = document.querySelector('.tipo-conta')
             let descPerfil = document.querySelector('.desc-perfil')
 
-            console.log(imgPerfil)
             imgPerfil.src = `../../../back/${item.imagens[0].caminho_imagem}`
             nomeOrganizador.innerHTML = item.nome
             if (item.cnpj != null) {
@@ -22,23 +21,72 @@ function carregarPerfil() {
                 tipoConta.innerHTML = "Pessoa Física"
             }
             descPerfil.innerHTML = item.descricao //Trocar para descrição
+        })
+    carregarRedesSociais()
+}
 
-            if (item.instagram == null) {
+function carregarRedesSociais() {
+    fetch("http://localhost:3300/cadastro")
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            data.forEach(campanha => {
+                if (campanha.id == idPerfil) {
+                    let btnInstagram = document.querySelector('.btn-instagram')
+                    let btnFacebook = document.querySelector('.btn-facebook')
+                    let btnTwitter = document.querySelector('.btn-twitter')
+                    let btnWhatsApp = document.querySelector('.btn-whatsapp')
+                    let btnSite = document.querySelector('.btn-site')
 
-            }
-            if (item.facebook == null) {
+                    if (campanha.instagram == null || campanha.instagram == "") {
+                        btnInstagram.classList.add('occult')
+                    } else {
+                        btnInstagram.addEventListener('click', () => {
+                            window.location.href = `https://${campanha.instagram}`;
+                        });
+                    }
 
-            }
-            if (item.twitter == null) {
 
-            }
-            if (item.whatsapp == null) {
+                    if (campanha.facebook == null || campanha.facebook == "") {
+                        btnFacebook.classList.add('occult')
+                    } else {
+                        btnFacebook.addEventListener('click', () => {
+                            window.location.href = `https://${campanha.facebook}`;
+                        });
+                    }
 
-            }
-            if (item.site == null) {
 
-            }
+                    if (campanha.twitter == null || campanha.twitter == "") {
+                        btnTwitter.classList.add('occult')
+                    } else {
+                        btnTwitter.addEventListener('click', () => {
+                            window.location.href = `https://${campanha.twitter}`;
+                        });
+                    }
 
+
+                    if (campanha.whatsapp == null || campanha.whatsapp == "") {
+                        btnWhatsApp.classList.add('occult')
+                    } else {
+                        btnWhatsApp.addEventListener('click', () => {
+                            window.location.href = `https://api.whatsapp.com/send?phone=${campanha.whatsapp}`;
+                        });
+
+                    }
+
+
+                    if (campanha.site == null || campanha.site == "") {
+                        btnSite.classList.add('occult')
+                    } else {
+                        btnSite.addEventListener('click', () => {
+                            window.location.href = `https://${campanha.site}`;
+                        });
+
+                    }
+                }
+
+            })
         })
 }
 
