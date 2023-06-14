@@ -46,7 +46,7 @@ function cadastrarPessoaJuridica() {
             "cnpj": document.querySelector("#cnpj").value,
             "email": document.querySelector("#email-pessoa-juridica").value,
             "telefone": `${document.querySelector("#ddd-pessoa-juridica").value}` + `${document.querySelector("#numero-celular-pessoa-juridica").value}`,
-            "senha": document.querySelector("#numero-celular-pessoa-juridica").value,
+            "senha": document.querySelector("#senha-1-pessoa-juridica").value,
             "instagram": null,
             "facebook": null,
             "twitter": null,

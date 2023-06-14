@@ -64,7 +64,7 @@ function carregarCampanhas() {
 
                 idCampanha.setAttribute("id", campanha.id);
                 idCampanha.classList.add("occult")
-                img.src = `../../../back/${campanha.imagens[0].caminho_imagem}`
+                img.src = `../../../back/${campanha.imagens[1].caminho_imagem}`
                 nomeCampanha.innerHTML = campanha.titulo
                 nomeOrganizador.innerHTML = campanha.organizador.nome
                 descricao.innerHTML = campanha.descricao
